@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "College Dormitory Website"
+description = "A PHP-rendered sample residence website for students exploring college dormitory rooms, shared spaces, campus life, and official housing guidance."
+version = "1.0.0"
+id = "artifacts/dormitory-site"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24836
+
+[services.development]
+run = "php -S 0.0.0.0:$PORT -t ../../dormitory"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/dormitory-site", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/dormitory-site/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24836"
+BASE_PATH = "/"

@@ -1,0 +1,1 @@
+- [PHP preview routing](php-preview-routing.md) — in artifact-router projects, a PHP server must be registered as a web artifact service to reach the preview path.
