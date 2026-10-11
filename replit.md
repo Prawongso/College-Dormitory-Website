@@ -1,10 +1,11 @@
-# [Project name]
+# College Dormitory Website
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A sample PHP website introducing a college residence hall, with practical housing guidance for students.
 
 ## Run & Operate
 
 - `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
+- `php -S 0.0.0.0:3000 -t dormitory` — run the dormitory website
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
 - `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
@@ -14,6 +15,7 @@ _Replace the heading above with the project's name, and this line with one sente
 ## Stack
 
 - pnpm workspaces, Node.js 24, TypeScript 5.9
+- PHP 8.4 for the dormitory website
 - API: Express 5
 - DB: PostgreSQL + Drizzle ORM
 - Validation: Zod (`zod/v4`), `drizzle-zod`
@@ -22,23 +24,27 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `dormitory/index.php` — single-page residence website and its editable content model
+- `artifacts/api-server` — shared Express API
+- `artifacts/mockup-sandbox` — reusable design preview canvas
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- The dormitory page is rendered directly by PHP; its school and hall copy is kept together near the top of the page for easy replacement.
+- Current rates, availability, policies, and dates are intentionally deferred to the college's official housing resources.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+- Visitors can explore sample room types, shared spaces, campus living, and a short guide to finding current housing information.
+- The page includes responsive section navigation and expandable FAQs.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- The requested website implementation is PHP.
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- Run the dormitory preview with the `College Dormitory Website` workflow.
 
 ## Pointers
 
