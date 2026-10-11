@@ -29,6 +29,12 @@ $roomTypes = [
         'detail' => 'Campus Community Living',
         'class' => 'room-card--single',
         'symbol' => 'beds',
+        'features' => ['Four-person room', 'Personal desk and wardrobe', 'Private internet connection'],
+        'gallery' => [
+            ['src' => 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Bright shared student room with warm wood furniture'],
+            ['src' => 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Neatly made bed in a calm, light-filled room'],
+            ['src' => 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Comfortable residence lounge with soft seating'],
+        ],
     ],
     [
         'number' => '02',
@@ -38,6 +44,12 @@ $roomTypes = [
         'detail' => 'Modern Suite Comfort',
         'class' => 'room-card--shared',
         'symbol' => 'door',
+        'features' => ['Suite-style floor plan', 'Central air conditioning', 'Ensuite bathroom and drying balcony'],
+        'gallery' => [
+            ['src' => 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Modern suite lounge with a bright, open layout'],
+            ['src' => 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Contemporary private room with a large window'],
+            ['src' => 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Clean suite interior with a study and sitting area'],
+        ],
     ],
     [
         'number' => '03',
@@ -47,6 +59,12 @@ $roomTypes = [
         'detail' => 'Nearby Off-Campus Option',
         'class' => 'room-card--suite',
         'symbol' => 'window',
+        'features' => ['About four minutes from campus', 'Modern suite living', 'Facility support nearby'],
+        'gallery' => [
+            ['src' => 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Welcoming shared living area in a modern residence'],
+            ['src' => 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Sunny bedroom with a comfortable study corner'],
+            ['src' => 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Relaxed common lounge with inviting seating'],
+        ],
     ],
 ];
 
@@ -381,8 +399,56 @@ function e(string $value): string
         .room-card p { min-height: 76px; margin: 14px 0 20px; color: var(--ink-soft); font-size: 12px; line-height: 1.75; }
         .room-meta { display: flex; align-items: center; gap: 8px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--yzu-blue); font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
         .room-meta::before { width: 7px; height: 7px; border-radius: 50%; background: var(--yzu-accent); content: ""; }
+        .room-card { position: relative; overflow: hidden; cursor: pointer; transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease; }
+        .room-card:hover, .room-card:focus-within { transform: translateY(-5px); box-shadow: 0 18px 38px rgba(8, 35, 56, .13); }
+        .room-card-art .room-graphic { transition: transform .55s cubic-bezier(.2,.7,.2,1); }
+        .room-card:hover .room-graphic { transform: scale(1.035); }
+        .room-card-view { position: absolute; right: 14px; bottom: 14px; display: inline-flex; align-items: center; gap: 9px; padding: 9px 11px; background: var(--yzu-blue); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+        .room-card-view span { font-size: 15px; line-height: .8; }
+        .room-card-open { position: absolute; z-index: 2; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; background: transparent; cursor: pointer; }
+        .room-card-open:focus-visible { outline: 3px solid var(--yzu-accent); outline-offset: -5px; }
         .rooms-footnote { display: flex; align-items: center; gap: 12px; margin: 25px 0 0; color: var(--ink-soft); font-size: 11px; }
         .rooms-footnote span { color: var(--yzu-accent); font-weight: 700; }
+
+        .room-dialog { width: min(1020px, calc(100vw - 36px)); max-width: none; max-height: calc(100dvh - 36px); margin: auto; padding: 0; overflow: visible; border: 0; background: transparent; color: var(--ink); }
+        .room-dialog::backdrop { background: rgba(8, 25, 39, .72); backdrop-filter: blur(5px); animation: backdrop-in .24s ease both; }
+        .room-dialog-shell { position: relative; display: grid; min-height: min(620px, calc(100dvh - 52px)); max-height: calc(100dvh - 36px); grid-template-columns: minmax(0, 1.08fr) minmax(340px, .92fr); overflow: hidden; background: var(--paper); box-shadow: 0 28px 90px rgba(0, 0, 0, .28); }
+        .room-dialog[open] .room-dialog-shell { animation: dialog-enter .42s cubic-bezier(.2,.75,.25,1) both; }
+        .room-dialog-gallery { position: relative; min-height: 510px; overflow: hidden; background: #cbd5e1; }
+        .room-dialog-image-window { position: absolute; inset: 0; overflow: hidden; }
+        .room-dialog-track { display: flex; height: 100%; transition: transform .55s cubic-bezier(.22,.75,.25,1); will-change: transform; }
+        .room-dialog-slide { height: 100%; margin: 0; overflow: hidden; }
+        .room-dialog-slide img { display: block; width: 100%; height: 100%; object-fit: cover; }
+        .room-dialog-image-window::after { position: absolute; inset: 55% 0 0; pointer-events: none; background: linear-gradient(transparent, rgba(8, 35, 56, .22)); content: ""; }
+        .room-dialog-arrow { position: absolute; z-index: 1; top: 50%; display: grid; width: 44px; height: 44px; place-items: center; border: 1px solid rgba(255, 255, 255, .75); border-radius: 50%; background: rgba(255, 255, 255, .9); color: var(--yzu-blue-deep); font-size: 21px; cursor: pointer; transform: translateY(-50%); transition: background .2s ease, transform .2s ease; }
+        .room-dialog-arrow:hover { background: #fff; transform: translateY(-50%) scale(1.06); }
+        .room-dialog-arrow:focus-visible, .room-dialog-close:focus-visible, .room-dialog-dot:focus-visible { outline: 3px solid var(--yzu-accent); outline-offset: 3px; }
+        .room-dialog-arrow--prev { left: 18px; }
+        .room-dialog-arrow--next { right: 18px; }
+        .room-dialog-gallery-bottom { position: absolute; z-index: 1; right: 20px; bottom: 18px; left: 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; color: #fff; }
+        .room-dialog-dots { display: flex; align-items: center; gap: 8px; }
+        .room-dialog-dot { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .56); cursor: pointer; transition: width .25s ease, background .25s ease; }
+        .room-dialog-dot[aria-current="true"] { width: 25px; border-radius: 99px; background: #fff; }
+        .room-dialog-count { font-size: 11px; font-variant-numeric: tabular-nums; }
+        .room-dialog-copy { display: flex; min-width: 0; flex-direction: column; justify-content: center; padding: clamp(34px, 5vw, 62px); }
+        .room-dialog-close { position: absolute; z-index: 2; top: 16px; right: 16px; display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: var(--paper); color: var(--yzu-blue-deep); font-size: 24px; line-height: 1; cursor: pointer; transition: transform .2s ease, background .2s ease; }
+        .room-dialog-close:hover { transform: rotate(90deg); background: #fff; }
+        .room-dialog-kicker { margin: 0 54px 16px 0; color: var(--yzu-accent); font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+        .room-dialog-title { margin: 0 0 8px; color: var(--yzu-blue-deep); font-family: var(--sans); font-size: clamp(27px, 3.5vw, 39px); font-weight: 700; letter-spacing: -.035em; line-height: 1.08; }
+        .room-dialog-type { margin: 0 0 20px; color: var(--yzu-blue); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+        .room-dialog-description { margin: 0; color: var(--ink-soft); font-size: 13px; line-height: 1.8; }
+        .room-dialog-highlights { display: grid; gap: 11px; margin: 25px 0 0; padding: 20px 0 0; border-top: 1px solid var(--line); list-style: none; }
+        .room-dialog-highlights li { display: flex; align-items: flex-start; gap: 11px; color: var(--ink); font-size: 12px; line-height: 1.5; }
+        .room-dialog-highlights li::before { flex: 0 0 7px; width: 7px; height: 7px; margin-top: 5px; border-radius: 50%; background: var(--yzu-accent); content: ""; }
+        .room-dialog-note { margin: 26px 0 0; color: var(--ink-soft); font-size: 10px; line-height: 1.6; }
+        @keyframes dialog-enter { from { opacity: 0; transform: translateY(20px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        @keyframes backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes hero-copy-in { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes hero-art-in { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+        @media (prefers-reduced-motion: no-preference) {
+            .hero-copy { animation: hero-copy-in .72s cubic-bezier(.2,.7,.2,1) both; }
+            .hero-art { animation: hero-art-in .82s .12s cubic-bezier(.2,.7,.2,1) both; }
+        }
 
         .spaces-section { padding: 105px 0 112px; background: var(--yzu-blue-deep); color: #ffffff; }
         .spaces-section .section-kicker { color: #93c5fd; }
@@ -545,6 +611,16 @@ function e(string $value): string
             .room-card-content { padding: 22px; }
             .room-card h3 { font-size: 24px; }
             .room-card p { min-height: 0; }
+            .room-dialog { width: min(560px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); }
+            .room-dialog-shell { min-height: 0; max-height: calc(100dvh - 24px); grid-template-columns: 1fr; grid-template-rows: minmax(235px, 36dvh) auto; overflow-y: auto; }
+            .room-dialog-gallery { min-height: 235px; }
+            .room-dialog-copy { padding: 29px 24px 27px; }
+            .room-dialog-close { top: 12px; right: 12px; width: 39px; height: 39px; }
+            .room-dialog-kicker { margin-bottom: 11px; }
+            .room-dialog-title { max-width: calc(100% - 34px); font-size: 29px; }
+            .room-dialog-type { margin-bottom: 13px; }
+            .room-dialog-highlights { gap: 8px; margin-top: 17px; padding-top: 15px; }
+            .room-dialog-note { margin-top: 17px; }
             .rooms-footnote { align-items: flex-start; font-size: 10px; }
             .spaces-grid { grid-template-columns: 1fr; gap: 12px; }
             .space-panel { min-height: 255px; }
@@ -577,6 +653,10 @@ function e(string $value): string
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
         }
+        .slide-reveal { opacity: 0; transform: translate3d(0, 24px, 0); transition: opacity .65s cubic-bezier(.2,.7,.2,1) var(--reveal-delay, 0ms), transform .65s cubic-bezier(.2,.7,.2,1) var(--reveal-delay, 0ms); }
+        .slide-reveal.is-visible { opacity: 1; transform: translate3d(0, 0, 0); }
+        .slide-reveal--from-left { transform: translate3d(-24px, 0, 0); }
+        .slide-reveal--from-left.is-visible { transform: translate3d(0, 0, 0); }
     </style>
 </head>
 <body id="top">
@@ -682,7 +762,7 @@ function e(string $value): string
                     <p>From campus residence halls for freshmen and international students to modern suite options for senior students.</p>
                 </div>
                 <div class="room-grid">
-                    <?php foreach ($roomTypes as $room): ?>
+                    <?php foreach ($roomTypes as $index => $room): ?>
                         <article class="room-card <?= e($room['class']) ?>">
                             <div class="room-card-art">
                                 <span class="room-type"><?= e($room['type']) ?></span>
@@ -711,6 +791,7 @@ function e(string $value): string
                                         <rect x="160" y="100" width="100" height="80" fill="#93c5fd" opacity=".6"/>
                                     </svg>
                                 <?php endif; ?>
+                                <span class="room-card-view" aria-hidden="true">View details <span>↗</span></span>
                             </div>
                             <div class="room-card-content">
                                 <div class="room-card-top">
@@ -720,12 +801,38 @@ function e(string $value): string
                                 <p><?= e($room['description']) ?></p>
                                 <div class="room-meta"><?= e($room['detail']) ?></div>
                             </div>
+                            <button class="room-card-open" type="button" aria-label="View photos and details for <?= e($room['name']) ?>" aria-haspopup="dialog" aria-controls="room-dialog" data-room-index="<?= (int) $index ?>"></button>
                         </article>
                     <?php endforeach; ?>
                 </div>
                 <p class="rooms-footnote"><span>Note</span> Each bed comes with a personal desk, chair, wardrobe, and internet connection.</p>
             </div>
         </section>
+
+        <dialog class="room-dialog" id="room-dialog" aria-labelledby="room-dialog-title" aria-describedby="room-dialog-description">
+            <div class="room-dialog-shell">
+                <button class="room-dialog-close" type="button" aria-label="Close room details">×</button>
+                <div class="room-dialog-gallery">
+                    <div class="room-dialog-image-window" role="group" aria-roledescription="carousel" aria-label="Room photos">
+                        <div class="room-dialog-track" id="room-dialog-track"></div>
+                    </div>
+                    <button class="room-dialog-arrow room-dialog-arrow--prev" type="button" data-gallery-step="-1" aria-label="Previous photo">‹</button>
+                    <button class="room-dialog-arrow room-dialog-arrow--next" type="button" data-gallery-step="1" aria-label="Next photo">›</button>
+                    <div class="room-dialog-gallery-bottom">
+                        <div class="room-dialog-dots" aria-label="Choose a photo"></div>
+                        <span class="room-dialog-count" aria-live="polite" aria-atomic="true"></span>
+                    </div>
+                </div>
+                <div class="room-dialog-copy">
+                    <p class="room-dialog-kicker">Residence overview</p>
+                    <h2 class="room-dialog-title" id="room-dialog-title"></h2>
+                    <p class="room-dialog-type"></p>
+                    <p class="room-dialog-description" id="room-dialog-description"></p>
+                    <ul class="room-dialog-highlights"></ul>
+                    <p class="room-dialog-note">Images are placeholders. Check the official YZU Housing Service portal for current room details and availability.</p>
+                </div>
+            </div>
+        </dialog>
 
         <section class="spaces-section" id="spaces" aria-labelledby="spaces-title">
             <div class="wrap">
@@ -838,5 +945,120 @@ function e(string $value): string
             <a class="footer-top" href="#top">Back to top ↑</a>
         </div>
     </footer>
+    <script>
+        (() => {
+            const roomTypes = <?= json_encode($roomTypes, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_THROW_ON_ERROR) ?>;
+            const dialog = document.getElementById('room-dialog');
+            const track = document.getElementById('room-dialog-track');
+            const dots = dialog.querySelector('.room-dialog-dots');
+            const count = dialog.querySelector('.room-dialog-count');
+            const title = dialog.querySelector('.room-dialog-title');
+            const type = dialog.querySelector('.room-dialog-type');
+            const description = dialog.querySelector('.room-dialog-description');
+            const highlights = dialog.querySelector('.room-dialog-highlights');
+            const closeButton = dialog.querySelector('.room-dialog-close');
+            const triggers = document.querySelectorAll('.room-card-open');
+            let activeRoom = null;
+            let activeTrigger = null;
+            let activeSlide = 0;
+
+            const showSlide = (nextIndex) => {
+                if (!activeRoom || !activeRoom.gallery.length) return;
+                activeSlide = (nextIndex + activeRoom.gallery.length) % activeRoom.gallery.length;
+                const percentPerSlide = 100 / activeRoom.gallery.length;
+                track.style.transform = `translateX(-${activeSlide * percentPerSlide}%)`;
+                track.querySelectorAll('.room-dialog-slide').forEach((slide, index) => {
+                    slide.setAttribute('aria-hidden', String(index !== activeSlide));
+                });
+                dots.querySelectorAll('.room-dialog-dot').forEach((dot, index) => {
+                    dot.setAttribute('aria-current', String(index === activeSlide));
+                });
+                count.textContent = `Photo ${activeSlide + 1} of ${activeRoom.gallery.length}`;
+            };
+
+            const openRoom = (room, trigger) => {
+                activeRoom = room;
+                activeTrigger = trigger;
+                activeSlide = 0;
+                title.textContent = room.name;
+                type.textContent = room.type;
+                description.textContent = room.description;
+                highlights.replaceChildren(...room.features.map((feature) => {
+                    const item = document.createElement('li');
+                    item.textContent = feature;
+                    return item;
+                }));
+                track.replaceChildren();
+                dots.replaceChildren();
+                track.style.width = `${room.gallery.length * 100}%`;
+
+                room.gallery.forEach((photo, index) => {
+                    const slide = document.createElement('figure');
+                    slide.className = 'room-dialog-slide';
+                    slide.style.flexBasis = `${100 / room.gallery.length}%`;
+                    const image = document.createElement('img');
+                    image.src = photo.src;
+                    image.alt = photo.alt;
+                    image.loading = index === 0 ? 'eager' : 'lazy';
+                    image.decoding = 'async';
+                    slide.append(image);
+                    track.append(slide);
+
+                    const dot = document.createElement('button');
+                    dot.className = 'room-dialog-dot';
+                    dot.type = 'button';
+                    dot.setAttribute('aria-label', `Show photo ${index + 1} of ${room.gallery.length}`);
+                    dot.addEventListener('click', () => showSlide(index));
+                    dots.append(dot);
+                });
+
+                showSlide(0);
+                dialog.showModal();
+                closeButton.focus();
+            };
+
+            triggers.forEach((trigger) => {
+                trigger.addEventListener('click', () => {
+                    const room = roomTypes[Number(trigger.dataset.roomIndex)];
+                    if (room) openRoom(room, trigger);
+                });
+            });
+
+            dialog.querySelectorAll('[data-gallery-step]').forEach((button) => {
+                button.addEventListener('click', () => showSlide(activeSlide + Number(button.dataset.galleryStep)));
+            });
+            closeButton.addEventListener('click', () => dialog.close());
+            dialog.addEventListener('click', (event) => {
+                if (event.target === dialog) dialog.close();
+            });
+            dialog.addEventListener('keydown', (event) => {
+                if (event.key === 'ArrowLeft') showSlide(activeSlide - 1);
+                if (event.key === 'ArrowRight') showSlide(activeSlide + 1);
+            });
+            dialog.addEventListener('close', () => {
+                if (activeTrigger?.isConnected) activeTrigger.focus();
+            });
+
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+                const revealTargets = document.querySelectorAll('.intro-grid, .section-heading, .room-card, .space-panel, .moment, .guide-step, .faq-title, .faq-list details, .closing-inner');
+                const observer = new IntersectionObserver((entries, revealObserver) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.12, rootMargin: '0px 0px -32px 0px' });
+
+                revealTargets.forEach((element, index) => {
+                    element.classList.add('slide-reveal');
+                    if (element.matches('.section-heading, .faq-title')) element.classList.add('slide-reveal--from-left');
+                    if (element.matches('.room-card, .space-panel')) element.style.setProperty('--reveal-delay', `${(index % 3) * 85}ms`);
+                    observer.observe(element);
+                });
+            }
+        })();
+    </script>
 </body>
 </html>

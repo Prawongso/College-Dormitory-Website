@@ -23,10 +23,10 @@ $navItems = [
 $roomTypes = [
     [
         'number' => '01',
-        'name' => 'First & Second Dormitory',
+        'name' => 'Dormitory 1',
         'type' => 'Quad Room (Standard)',
         'description' => 'The main residential area for freshmen and international students. Each bed comes with its own desk, chair, wardrobe, and private internet connection.',
-        'detail' => 'Campus Community Living',
+        'detail' => 'Dormitory 1 · Campus Community',
         'class' => 'room-card--single',
         'symbol' => 'beds',
         'features' => ['Four-person room', 'Personal desk and wardrobe', 'Private internet connection'],
@@ -38,10 +38,25 @@ $roomTypes = [
     ],
     [
         'number' => '02',
-        'name' => 'Third Dormitory',
+        'name' => 'Dormitory 2',
+        'type' => 'Quad Room (Standard)',
+        'description' => 'The main residential area for freshmen and international students. Each bed comes with its own desk, chair, wardrobe, and private internet connection.',
+        'detail' => 'Dormitory 2 · Campus Community',
+        'class' => 'room-card--single',
+        'symbol' => 'beds',
+        'features' => ['Four-person room', 'Personal desk and wardrobe', 'Private internet connection'],
+        'gallery' => [
+            ['src' => 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Bright shared student room with warm wood furniture'],
+            ['src' => 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Neatly made bed in a calm, light-filled room'],
+            ['src' => 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Comfortable residence lounge with soft seating'],
+        ],
+    ],
+    [
+        'number' => '03',
+        'name' => 'Dormitory 3A',
         'type' => 'Suite-Style Living',
         'description' => 'Spacious suite-style layout featuring central air conditioning, ensuite bathrooms, and personal drying balconies for local senior students.',
-        'detail' => 'Modern Suite Comfort',
+        'detail' => 'Dormitory 3A · Modern Suite',
         'class' => 'room-card--shared',
         'symbol' => 'door',
         'features' => ['Suite-style floor plan', 'Central air conditioning', 'Ensuite bathroom and drying balcony'],
@@ -52,7 +67,22 @@ $roomTypes = [
         ],
     ],
     [
-        'number' => '03',
+        'number' => '04',
+        'name' => 'Dormitory 3B',
+        'type' => 'Suite-Style Living',
+        'description' => 'Spacious suite-style layout featuring central air conditioning, ensuite bathrooms, and personal drying balconies for local senior students.',
+        'detail' => 'Dormitory 3B · Modern Suite',
+        'class' => 'room-card--shared',
+        'symbol' => 'door',
+        'features' => ['Suite-style floor plan', 'Central air conditioning', 'Ensuite bathroom and drying balcony'],
+        'gallery' => [
+            ['src' => 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Modern suite lounge with a bright, open layout'],
+            ['src' => 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Contemporary private room with a large window'],
+            ['src' => 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Clean suite interior with a study and sitting area'],
+        ],
+    ],
+    [
+        'number' => '05',
         'name' => 'Jih-Shian Building',
         'type' => 'Off-Campus Residence',
         'description' => 'Conveniently located just a short 4-minute walk from campus, offering modern suite living with full facility support.',
@@ -388,6 +418,10 @@ function e(string $value): string
         }
         .section-heading p { max-width: 280px; margin: 0 0 4px; color: var(--ink-soft); font-size: 13px; }
         .room-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+        .room-grid--five { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+        .room-grid--five .room-card { grid-column: span 2; }
+        .room-grid--five .room-card:nth-child(4) { grid-column: 2 / span 2; }
+        .room-grid--five .room-card:nth-child(5) { grid-column: 4 / span 2; }
         .room-card { min-width: 0; background: var(--paper); border: 1px solid var(--line); }
         .room-card-art { position: relative; overflow: hidden; height: 235px; background: #cbd5e1; }
         .room-graphic { position: absolute; inset: 0; width: 100%; height: 100%; }
@@ -607,6 +641,10 @@ function e(string $value): string
             .section-heading h2 { font-size: clamp(32px, 9vw, 48px); }
             .section-heading p { max-width: 410px; }
             .room-grid { grid-template-columns: 1fr; gap: 15px; }
+            .room-grid--five { grid-template-columns: 1fr; }
+            .room-grid--five .room-card { grid-column: auto; }
+            .room-grid--five .room-card:nth-child(4),
+            .room-grid--five .room-card:nth-child(5) { grid-column: auto; }
             .room-card-art { height: 220px; }
             .room-card-content { padding: 22px; }
             .room-card h3 { font-size: 24px; }
@@ -761,7 +799,7 @@ function e(string $value): string
                     </div>
                     <p>From campus residence halls for freshmen and international students to modern suite options for senior students.</p>
                 </div>
-                <div class="room-grid">
+                <div class="room-grid<?= count($roomTypes) === 5 ? ' room-grid--five' : '' ?>">
                     <?php foreach ($roomTypes as $index => $room): ?>
                         <article class="room-card <?= e($room['class']) ?>">
                             <div class="room-card-art">
