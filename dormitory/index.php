@@ -52,7 +52,7 @@ $roomTypes = [
         'gallery' => [
             ['src' => 'assets/dorm-2-room.webp', 'alt' => 'Dormitory 2 shared room with bunk beds and built-in desks'],
             ['src' => 'assets/dorm-2-corridor.webp', 'alt' => 'Hallway connecting rooms in Dormitory 2'],
-            ['src' => 'assets/dorm-bed.webp', 'alt' => 'Representative student dorm bunk-bed and desk arrangement'],
+            ['src' => 'assets/dorm-2-bathroom.webp', 'alt' => 'Bathroom facilities in Dormitory 2'],
         ],
     ],
     [
@@ -63,11 +63,11 @@ $roomTypes = [
         'detail' => 'Dormitory 3A · Modern Suite',
         'class' => 'room-card--shared',
         'symbol' => 'door',
-        'cover' => 'assets/dorm-3a-bathroom.webp',
-        'coverAlt' => 'Bathroom facilities in Dormitory 3A',
+        'cover' => 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=1400&q=82',
+        'coverAlt' => 'Illustrative suite lounge; not a confirmed Dormitory 3A photo',
         'features' => ['Suite-style floor plan', 'Central air conditioning', 'Ensuite bathroom and drying balcony'],
         'gallery' => [
-            ['src' => 'assets/dorm-3a-bathroom.webp', 'alt' => 'Bathroom facilities in Dormitory 3A'],
+            ['src' => 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Illustrative suite lounge; not a confirmed Dormitory 3A photo'],
             ['src' => 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Illustrative reference room; not a confirmed Dormitory 3A photo'],
             ['src' => 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Illustrative reference suite; not a confirmed Dormitory 3A photo'],
         ],
