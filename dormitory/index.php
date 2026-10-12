@@ -926,6 +926,35 @@ function e(string $value): string
             </div>
         </dialog>
 
+        <section class="student-essentials" id="student-essentials" aria-labelledby="student-essentials-title">
+            <div class="wrap">
+                <div class="section-heading">
+                    <div>
+                        <div class="eyebrow section-kicker">New Resident Essentials</div>
+                        <h2 id="student-essentials-title">Plan for dorm life.</h2>
+                    </div>
+                    <p>Practical guides to dorm facilities, room dimensions, and residence rules. Open any poster to view it full size.</p>
+                </div>
+                <div class="resource-grid">
+                    <?php foreach ($studentResources as $resource): ?>
+                        <article class="resource-card">
+                            <a class="resource-image" href="<?= e($resource['image']) ?>" target="_blank" rel="noopener" aria-label="Open <?= e($resource['title']) ?> poster in a new tab">
+                                <img src="<?= e($resource['image']) ?>" alt="<?= e($resource['alt']) ?>" loading="lazy" decoding="async">
+                                <span class="resource-open" aria-hidden="true">Open poster ↗</span>
+                            </a>
+                            <div class="resource-content">
+                                <span class="resource-label"><?= e($resource['label']) ?></span>
+                                <h3><?= e($resource['title']) ?></h3>
+                                <p><?= e($resource['description']) ?></p>
+                                <p class="resource-language">Original guide · Traditional Chinese</p>
+                            </div>
+                        </article>
+                    <?php endforeach; ?>
+                </div>
+                <p class="resource-note">These source guides are in Traditional Chinese. The English summaries are for orientation; confirm current policies, application dates, and room details with the YZU Student Housing Service. Room measurements are approximate.</p>
+            </div>
+        </section>
+
         <section class="spaces-section" id="spaces" aria-labelledby="spaces-title">
             <div class="wrap">
                 <div class="section-heading">
@@ -996,35 +1025,6 @@ function e(string $value): string
                     </div>
                     <a class="housing-cta" href="#questions">View Housing FAQs <span aria-hidden="true">↓</span></a>
                 </div>
-            </div>
-        </section>
-
-        <section class="student-essentials" id="student-essentials" aria-labelledby="student-essentials-title">
-            <div class="wrap">
-                <div class="section-heading">
-                    <div>
-                        <div class="eyebrow section-kicker">New Resident Essentials</div>
-                        <h2 id="student-essentials-title">Plan for dorm life.</h2>
-                    </div>
-                    <p>Practical guides to dorm facilities, room dimensions, and residence rules. Open any poster to view it full size.</p>
-                </div>
-                <div class="resource-grid">
-                    <?php foreach ($studentResources as $resource): ?>
-                        <article class="resource-card">
-                            <a class="resource-image" href="<?= e($resource['image']) ?>" target="_blank" rel="noopener" aria-label="Open <?= e($resource['title']) ?> poster in a new tab">
-                                <img src="<?= e($resource['image']) ?>" alt="<?= e($resource['alt']) ?>" loading="lazy" decoding="async">
-                                <span class="resource-open" aria-hidden="true">Open poster ↗</span>
-                            </a>
-                            <div class="resource-content">
-                                <span class="resource-label"><?= e($resource['label']) ?></span>
-                                <h3><?= e($resource['title']) ?></h3>
-                                <p><?= e($resource['description']) ?></p>
-                                <p class="resource-language">Original guide · Traditional Chinese</p>
-                            </div>
-                        </article>
-                    <?php endforeach; ?>
-                </div>
-                <p class="resource-note">These source guides are in Traditional Chinese. The English summaries are for orientation; confirm current policies, application dates, and room details with the YZU Student Housing Service. Room measurements are approximate.</p>
             </div>
         </section>
 
