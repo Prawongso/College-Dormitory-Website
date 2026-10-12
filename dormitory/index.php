@@ -211,6 +211,7 @@ function e(string $value): string
             color-scheme: light;
             --paper: #f0f4f8;
             --paper-deep: #e2e8f0;
+            --paper-tint: #eaf0f6;
             --ink: #1e293b;
             --ink-soft: #475569;
             --yzu-blue: #0f3c5d;
@@ -599,7 +600,7 @@ function e(string $value): string
         .faq-answer { max-width: 560px; padding: 0 35px 19px 0; color: var(--ink-soft); font-size: 12px; }
         .faq-answer p { margin: 0; }
 
-        .student-essentials { padding: 103px 0 111px; background: var(--paper-deep); }
+        .student-essentials { padding: 103px 0 111px; background: var(--paper-tint); }
         .resource-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: stretch; gap: 16px; }
         .resource-card { min-width: 0; overflow: hidden; background: var(--paper); border: 1px solid var(--line); }
         .resource-image { position: relative; display: block; padding: 12px; background: #ffffff; border-bottom: 1px solid var(--line); }
