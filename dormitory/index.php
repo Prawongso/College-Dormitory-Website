@@ -119,6 +119,8 @@ $spaces = [
         'text' => 'Located right around the residence blocks with restaurants, convenience stores, cafés, and an ATM network to meet all daily needs.',
         'mark' => 'F',
         'tone' => 'space-panel--rose',
+        'link' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/su-she-fu-wu/xue-sheng-can-ting',
+        'linkLabel' => 'Campus food court',
         'slides' => [
             ['image' => 'assets/dorm-1-dining.webp', 'alt' => 'Dining area with tables and chairs at the residence'],
             ['image' => 'assets/campus-foodcourt-1.webp', 'alt' => 'Dining tables in a campus food court'],
@@ -167,6 +169,8 @@ $spaces = [
         'text' => 'A campus gym and indoor pool provide places to exercise, swim, and take a break from study.',
         'mark' => 'G',
         'tone' => 'space-panel--blue',
+        'link' => 'https://pe.yzu.edu.tw/index.php/zh/',
+        'linkLabel' => 'Campus gym',
         'slides' => [
             ['image' => 'assets/campus-gym-building.webp', 'alt' => 'Campus gym building beside an outdoor running track'],
             ['image' => 'assets/campus-gym-interior.webp', 'alt' => 'Exercise machines and weights inside the campus gym'],
@@ -179,6 +183,8 @@ $spaces = [
         'text' => 'Student Affairs offers campus support. Pick up student packages at the Management Center on the first floor of Dormitory 2.',
         'mark' => 'A',
         'tone' => 'space-panel--lilac',
+        'link' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/',
+        'linkLabel' => 'Student Affairs',
         'slides' => [
             ['image' => 'assets/student-affairs-office.webp', 'alt' => 'Student Affairs office area on campus'],
             ['image' => 'assets/student-affairs-info.webp', 'alt' => 'Student Affairs information and organization display'],
@@ -191,10 +197,35 @@ $spaces = [
         'text' => 'Medical service is available on the first floor of Dormitory 3.',
         'mark' => 'M',
         'tone' => 'space-panel--teal',
+        'link' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/wei-sheng-bao-jian',
+        'linkLabel' => 'Medical services',
         'slides' => [
             ['image' => 'assets/medical-services-building.webp', 'alt' => 'Exterior entrance to the campus Student Health Center'],
             ['image' => 'assets/medical-services.webp', 'alt' => 'Medical service room on the first floor of Dormitory 3'],
         ],
+    ],
+];
+
+$officialHousingLinks = [
+    [
+        'label' => 'Student Dorm Association',
+        'href' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/su-she-fu-wu/2016-07-26-08-55-27',
+    ],
+    [
+        'label' => 'Dormitory Housing Application Info',
+        'href' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/component/content/article/798-2016-07-19-03-24-27?Itemid=661',
+    ],
+    [
+        'label' => 'Dorm announcement',
+        'href' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/su-she-fu-wu/new',
+    ],
+    [
+        'label' => 'Dormitory Introduction & Application',
+        'href' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/?option=com_sppagebuilder&view=page&id=108',
+    ],
+    [
+        'label' => 'Dorm Q & A',
+        'href' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/su-she-fu-wu/2016-07-19-01-33-33',
     ],
 ];
 
@@ -632,6 +663,10 @@ function e(string $value): string
         .space-copy { position: relative; z-index: 1; max-width: 305px; margin-top: auto; }
         .space-copy h3 { margin: 0 0 10px; font-family: var(--sans); font-size: clamp(24px, 2.5vw, 32px); font-weight: 700; color: var(--yzu-blue-deep); letter-spacing: -.02em; }
         .space-copy p { margin: 0; max-width: 290px; color: var(--ink-soft); font-size: 12px; line-height: 1.7; }
+        .space-card-link { display: inline-flex; align-items: center; gap: 9px; margin-top: 14px; color: var(--yzu-blue); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
+        .space-card-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+        .space-card-link:focus-visible { outline: 3px solid var(--yzu-accent); outline-offset: 3px; }
+        .space-card-link span { font-size: 15px; }
         .spaces-tail { display: flex; justify-content: flex-end; margin-top: 23px; color: rgba(255, 255, 255, .72); font-size: 13px; font-weight: 500; }
 
         .daily-section { padding: 112px 0 105px; }
@@ -687,6 +722,15 @@ function e(string $value): string
         .resource-content p { margin: 0; color: var(--ink-soft); font-size: 11px; line-height: 1.65; }
         .resource-language { margin-top: 13px !important; padding-top: 11px; border-top: 1px solid var(--line); color: var(--yzu-blue) !important; font-size: 9px !important; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
         .resource-note { max-width: 780px; margin: 22px 0 0; color: var(--ink-soft); font-size: 11px; }
+        .official-links { margin-top: 38px; padding-top: 27px; border-top: 1px solid var(--line); }
+        .official-links-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; margin-bottom: 15px; }
+        .official-links-heading h3 { margin: 0; color: var(--yzu-blue-deep); font-family: var(--sans); font-size: 20px; font-weight: 700; }
+        .official-links-heading p { margin: 0; color: var(--ink-soft); font-size: 11px; }
+        .official-links-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+        .official-link { display: flex; min-height: 68px; align-items: center; justify-content: space-between; gap: 15px; padding: 15px 17px; border: 1px solid var(--line); background: var(--paper); color: var(--yzu-blue-deep); font-size: 12px; font-weight: 700; line-height: 1.4; text-decoration: none; transition: border-color .2s ease, background .2s ease, transform .2s ease; }
+        .official-link:hover { transform: translateY(-2px); border-color: var(--yzu-blue); background: #ffffff; }
+        .official-link:focus-visible { outline: 3px solid var(--yzu-accent); outline-offset: 3px; }
+        .official-link span:last-child { flex: 0 0 auto; color: var(--yzu-accent); font-size: 16px; }
         .resource-note a, .guide-notice a { color: var(--yzu-blue); font-weight: 700; text-underline-offset: 3px; }
 
         .closing { overflow: hidden; padding: 76px 0 81px; background: var(--paper-deep); border-top: 1px solid var(--line); }
@@ -719,6 +763,7 @@ function e(string $value): string
             .room-card p { min-height: 96px; }
             .daily-layout, .housing-layout { gap: 50px; }
             .resource-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .official-links-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
         @media (max-width: 680px) {
             :root { --gutter: 22px; }
@@ -809,6 +854,8 @@ function e(string $value): string
             .space-panel { min-height: 350px; }
             .spaces-grid .space-panel:first-child { min-height: 350px; }
             .resource-grid { grid-template-columns: 1fr; gap: 14px; }
+            .official-links-heading { align-items: flex-start; flex-direction: column; gap: 7px; }
+            .official-links-grid { grid-template-columns: 1fr; }
             .spaces-tail { font-size: 13px; }
             .daily-layout { grid-template-columns: 1fr; gap: 35px; }
             .daily-heading { position: static; }
@@ -1033,6 +1080,20 @@ function e(string $value): string
                     <?php endforeach; ?>
                 </div>
                 <p class="resource-note">These source guides are in Traditional Chinese. The English summaries are for orientation; confirm current policies, application dates, and room details with the YZU Student Housing Service. Room measurements are approximate.</p>
+                <div class="official-links">
+                    <div class="official-links-heading">
+                        <h3 id="official-links-title">Official Dormitory Links</h3>
+                        <p>Applications, announcements, and student housing information from YZU.</p>
+                    </div>
+                    <nav class="official-links-grid" aria-labelledby="official-links-title">
+                        <?php foreach ($officialHousingLinks as $link): ?>
+                            <a class="official-link" href="<?= e($link['href']) ?>" target="_blank" rel="noopener noreferrer">
+                                <span><?= e($link['label']) ?></span>
+                                <span aria-hidden="true">↗</span>
+                            </a>
+                        <?php endforeach; ?>
+                    </nav>
+                </div>
             </div>
         </section>
 
@@ -1068,6 +1129,11 @@ function e(string $value): string
                             <div class="space-copy">
                                 <h3><?= e($space['name']) ?></h3>
                                 <p><?= e($space['text']) ?></p>
+                                <?php if (!empty($space['link'])): ?>
+                                    <a class="space-card-link" href="<?= e($space['link']) ?>" target="_blank" rel="noopener noreferrer">
+                                        <?= e($space['linkLabel']) ?><span aria-hidden="true">↗</span>
+                                    </a>
+                                <?php endif; ?>
                             </div>
                         </article>
                     <?php endforeach; ?>
