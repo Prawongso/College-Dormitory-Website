@@ -24,14 +24,14 @@ $roomTypes = [
     [
         'number' => '01',
         'name' => 'Dormitory 1',
-        'type' => 'Quad Room (Standard)',
-        'description' => 'The main residential area for freshmen and international students. Each bed comes with its own desk, chair, wardrobe, and private internet connection.',
-        'detail' => 'Dormitory 1 · Campus Community',
+        'type' => "Standard Quad · Men's Residence",
+        'description' => 'A men’s residence with shared rooms and communal facilities. Each bed has its own desk, chair, wardrobe, and internet connection.',
+        'detail' => 'Men’s residence · Shared facilities',
         'class' => 'room-card--single',
         'symbol' => 'beds',
         'cover' => 'assets/dorm-1-room.webp',
         'coverAlt' => 'Dormitory 1 shared room with bunk beds and personal desks',
-        'features' => ['Four-person room', 'Personal desk and wardrobe', 'Private internet connection'],
+        'features' => ['Men’s residence', 'Shared bathroom facilities', 'Personal desk, chair, and wardrobe'],
         'gallery' => [
             ['src' => 'assets/dorm-1-room.webp', 'alt' => 'Dormitory 1 shared room with bunk beds and personal desks'],
             ['src' => 'assets/dorm-1-bathroom.webp', 'alt' => 'Bathroom facilities in Dormitory 1'],
@@ -41,50 +41,54 @@ $roomTypes = [
     [
         'number' => '02',
         'name' => 'Dormitory 2',
-        'type' => 'Quad Room (Standard)',
-        'description' => 'The main residential area for freshmen and international students. Each bed comes with its own desk, chair, wardrobe, and private internet connection.',
-        'detail' => 'Dormitory 2 · Campus Community',
+        'type' => 'Standard Quad · Women’s Residence',
+        'description' => 'A women’s residence with shared rooms and communal facilities. Each bed has its own desk, chair, wardrobe, and internet connection.',
+        'detail' => 'Women’s residence · Management Center on 1F',
         'class' => 'room-card--single',
         'symbol' => 'beds',
         'cover' => 'assets/dorm-2-room.webp',
         'coverAlt' => 'Dormitory 2 shared room with bunk beds and built-in desks',
-        'features' => ['Four-person room', 'Personal desk and wardrobe', 'Private internet connection'],
+        'features' => ['Women’s residence', 'Shared bathroom facilities', 'Management Center and package pickup on the first floor'],
         'gallery' => [
             ['src' => 'assets/dorm-2-room.webp', 'alt' => 'Dormitory 2 shared room with bunk beds and built-in desks'],
             ['src' => 'assets/dorm-2-corridor.webp', 'alt' => 'Hallway connecting rooms in Dormitory 2'],
             ['src' => 'assets/dorm-2-bathroom.webp', 'alt' => 'Bathroom facilities in Dormitory 2'],
+            ['src' => 'assets/dorm-2-kitchen-angle-1.webp', 'alt' => 'Recently updated shared kitchen in Dormitory 2, wide view'],
+            ['src' => 'assets/dorm-2-kitchen-angle-2.webp', 'alt' => 'Recently updated shared kitchen in Dormitory 2, dining area'],
+            ['src' => 'assets/dorm-2-kitchen-angle-4.webp', 'alt' => 'Recently updated shared kitchen in Dormitory 2, counter and windows'],
+            ['src' => 'assets/dorm-2-kitchen-angle-7.webp', 'alt' => 'Recently updated shared kitchen in Dormitory 2, counter and refrigerator'],
         ],
     ],
     [
         'number' => '03',
         'name' => 'Dormitory 3A',
-        'type' => 'Suite-Style Living',
-        'description' => 'Spacious suite-style layout featuring central air conditioning, ensuite bathrooms, and personal drying balconies for local senior students.',
-        'detail' => 'Dormitory 3A · Modern Suite',
+        'type' => 'Private Suite · Higher-cost option',
+        'description' => 'Women’s residence in the shared Dormitory 3 building, separated indoors from 3B by walls. Every room has a private bathroom and balcony; the suite layout is identical to 3B and costs more than Dormitories 1 and 2.',
+        'detail' => 'Women’s residence · Private bathroom and balcony',
         'class' => 'room-card--shared',
         'symbol' => 'door',
-        'cover' => 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=1400&q=82',
-        'coverAlt' => 'Illustrative suite lounge; not a confirmed Dormitory 3A photo',
-        'features' => ['Suite-style floor plan', 'Central air conditioning', 'Ensuite bathroom and drying balcony'],
+        'cover' => 'assets/dorm-3-building.webp',
+        'coverAlt' => 'Exterior of the shared building that contains Dormitories 3A and 3B',
+        'features' => ['Women’s residence', 'Private bathroom and balcony in every room', 'Same indoor suite layout as Dormitory 3B', 'Higher-cost than Dormitories 1 and 2'],
         'gallery' => [
-            ['src' => 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Illustrative suite lounge; not a confirmed Dormitory 3A photo'],
-            ['src' => 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Illustrative reference room; not a confirmed Dormitory 3A photo'],
-            ['src' => 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Illustrative reference suite; not a confirmed Dormitory 3A photo'],
+            ['src' => 'assets/dorm-3-building.webp', 'alt' => 'Exterior of the shared building that contains Dormitories 3A and 3B'],
+            ['src' => 'assets/shared-laundry.webp', 'alt' => 'Shared laundry facilities serving the Dormitory 3 balconies'],
         ],
     ],
     [
         'number' => '04',
         'name' => 'Dormitory 3B',
-        'type' => 'Suite-Style Living',
-        'description' => 'Spacious suite-style layout featuring central air conditioning, ensuite bathrooms, and personal drying balconies for local senior students.',
-        'detail' => 'Dormitory 3B · Modern Suite',
+        'type' => 'Private Suite · Higher-cost option',
+        'description' => 'Men’s residence in the shared Dormitory 3 building, separated indoors from 3A by walls. Every room has a private bathroom and balcony; the suite layout is identical to 3A and costs more than Dormitories 1 and 2.',
+        'detail' => 'Men’s residence · Private bathroom and balcony',
         'class' => 'room-card--shared',
         'symbol' => 'door',
-        'features' => ['Suite-style floor plan', 'Central air conditioning', 'Ensuite bathroom and drying balcony'],
+        'cover' => 'assets/dorm-3-building.webp',
+        'coverAlt' => 'Exterior of the shared building that contains Dormitories 3A and 3B',
+        'features' => ['Men’s residence', 'Private bathroom and balcony in every room', 'Same indoor suite layout as Dormitory 3A', 'Higher-cost than Dormitories 1 and 2'],
         'gallery' => [
-            ['src' => 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Illustrative reference suite lounge; not a confirmed Dormitory 3B photo'],
-            ['src' => 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Illustrative reference room; not a confirmed Dormitory 3B photo'],
-            ['src' => 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Illustrative reference suite; not a confirmed Dormitory 3B photo'],
+            ['src' => 'assets/dorm-3-building.webp', 'alt' => 'Exterior of the shared building that contains Dormitories 3A and 3B'],
+            ['src' => 'assets/shared-laundry.webp', 'alt' => 'Shared laundry facilities serving the Dormitory 3 balconies'],
         ],
     ],
     [
@@ -113,8 +117,12 @@ $spaces = [
         'text' => 'Located right around the residence blocks with restaurants, convenience stores, cafés, and an ATM network to meet all daily needs.',
         'mark' => 'F',
         'tone' => 'space-panel--rose',
-        'image' => 'assets/dorm-1-dining.webp',
-        'imageAlt' => 'Student dining area with tables and chairs at the residence',
+        'slides' => [
+            ['image' => 'assets/dorm-1-dining.webp', 'alt' => 'Dining area with tables and chairs at the residence'],
+            ['image' => 'assets/campus-foodcourt-1.webp', 'alt' => 'Dining tables in a campus food court'],
+            ['image' => 'assets/campus-foodcourt-2.webp', 'alt' => 'Indoor view of the campus food court'],
+            ['image' => 'assets/campus-foodcourt-3.webp', 'alt' => 'Another view of the campus food court seating'],
+        ],
     ],
     [
         'index' => '02 / STUDY',
@@ -122,17 +130,64 @@ $spaces = [
         'text' => 'Quiet student lounges, reading rooms, and comfortable spaces designed for collaborative study or relaxed conversations.',
         'mark' => 'S',
         'tone' => 'space-panel--sage',
-        'image' => 'assets/dorm-1-study.webp',
-        'imageAlt' => 'Bright study room with desks and chairs inside the residence',
+        'slides' => [
+            ['image' => 'assets/dorm-1-study.webp', 'alt' => 'Study room with desks and chairs in Dormitory 1'],
+            ['image' => 'assets/dorm-2-study-angle-1.webp', 'alt' => 'Study room and desks in Dormitory 2, wide view'],
+            ['image' => 'assets/dorm-2-study-angle-2.webp', 'alt' => 'Study room in Dormitory 2, view of the seating area'],
+            ['image' => 'assets/dorm-2-study-angle-3.webp', 'alt' => 'Study room in Dormitory 2, alternate angle'],
+            ['image' => 'assets/dorm-2-study-angle-4.webp', 'alt' => 'Study room in Dormitory 2, view toward the work tables'],
+        ],
     ],
     [
-        'index' => '03 / CARE',
-        'name' => 'Convenience & Wellness',
-        'text' => 'Equipped with simple kitchens, Muslim prayer rooms, laundry balconies, coin-operated washers, and 24-hour support.',
+        'index' => '03 / DAILY LIFE',
+        'name' => 'Shared Kitchens & Laundry',
+        'text' => 'See the updated kitchens in Dormitories 1 and 2, plus shared laundry facilities for dorm residents.',
         'mark' => 'W',
         'tone' => 'space-panel--gold',
-        'image' => 'assets/dorm-1-kitchen.webp',
-        'imageAlt' => 'Shared kitchen counter and sink in the residence',
+        'slides' => [
+            ['image' => 'assets/dorm-2-kitchen-angle-1.webp', 'alt' => 'Updated shared kitchen in Dormitory 2, wide view'],
+            ['image' => 'assets/dorm-2-kitchen-angle-2.webp', 'alt' => 'Updated shared kitchen in Dormitory 2, dining area'],
+            ['image' => 'assets/dorm-2-kitchen-angle-4.webp', 'alt' => 'Updated shared kitchen in Dormitory 2, counter and windows'],
+            ['image' => 'assets/dorm-2-kitchen-angle-6.webp', 'alt' => 'Updated shared kitchen in Dormitory 2, tables and counter'],
+            ['image' => 'assets/dorm-2-kitchen-angle-7.webp', 'alt' => 'Updated shared kitchen in Dormitory 2, counter and refrigerator'],
+            ['image' => 'assets/dorm-2-kitchen-angle-8.webp', 'alt' => 'Updated shared kitchen in Dormitory 2, view toward the dining table'],
+            ['image' => 'assets/dorm-1-kitchen.webp', 'alt' => 'Updated kitchen in the men’s Dormitory 1'],
+            ['image' => 'assets/shared-laundry.webp', 'alt' => 'Shared laundry facilities serving the dorm balconies'],
+        ],
+    ],
+    [
+        'index' => '04 / FITNESS',
+        'name' => 'Gym & Recreation',
+        'text' => 'A campus gym and indoor pool provide places to exercise, swim, and take a break from study.',
+        'mark' => 'G',
+        'tone' => 'space-panel--blue',
+        'slides' => [
+            ['image' => 'assets/campus-gym-building.webp', 'alt' => 'Campus gym building beside an outdoor running track'],
+            ['image' => 'assets/campus-gym-interior.webp', 'alt' => 'Exercise machines and weights inside the campus gym'],
+            ['image' => 'assets/campus-pool.webp', 'alt' => 'Indoor swimming pool on campus'],
+        ],
+    ],
+    [
+        'index' => '05 / STUDENT SUPPORT',
+        'name' => 'Student Affairs & Packages',
+        'text' => 'Student Affairs offers campus support. Pick up student packages at the Management Center on the first floor of Dormitory 2.',
+        'mark' => 'A',
+        'tone' => 'space-panel--lilac',
+        'slides' => [
+            ['image' => 'assets/student-affairs-office.webp', 'alt' => 'Student Affairs office area on campus'],
+            ['image' => 'assets/student-affairs-info.webp', 'alt' => 'Student Affairs information and organization display'],
+            ['image' => 'assets/dorm-2-building.webp', 'alt' => 'Exterior of Dormitory 2, where the Management Center is on the first floor'],
+        ],
+    ],
+    [
+        'index' => '06 / HEALTH',
+        'name' => 'Medical Services',
+        'text' => 'Medical service is available on the first floor of Dormitory 3.',
+        'mark' => 'M',
+        'tone' => 'space-panel--teal',
+        'slides' => [
+            ['image' => 'assets/medical-services.webp', 'alt' => 'Medical service room on the first floor of Dormitory 3'],
+        ],
     ],
 ];
 
@@ -159,7 +214,7 @@ $faqs = [
     ],
     [
         'question' => 'Where can I pick up packages and mail?',
-        'answer' => 'Registered mails and courier packages are handled through the post office or the dormitory front desk where the teacher-in-residence assists with notifications.',
+        'answer' => 'Pick up student packages at the Management Center on the first floor of Dormitory 2.',
     ],
 ];
 
@@ -536,12 +591,24 @@ function e(string $value): string
         .spaces-section .section-kicker { color: #93c5fd; }
         .spaces-section .section-heading h2 { max-width: 720px; color: #ffffff; }
         .spaces-section .section-heading p { color: rgba(255, 255, 255, .72); }
-        .spaces-grid { display: grid; grid-template-columns: 1.15fr .92fr .92fr; align-items: stretch; gap: 13px; }
+        .spaces-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; gap: 13px; }
         .space-panel { position: relative; display: flex; min-height: 380px; flex-direction: column; justify-content: space-between; overflow: hidden; padding: 22px; color: var(--ink); border: 1px solid rgba(255,255,255,0.1); }
         .space-panel--rose { background: #e0f2fe; }
         .space-panel--sage { background: #e2e8f0; }
         .space-panel--gold { background: #fef3c7; }
-        .space-photo { display: block; width: calc(100% + 44px); height: 178px; flex: 0 0 178px; margin: -22px -22px 0; object-fit: cover; }
+        .space-panel--blue { background: #dbeafe; }
+        .space-panel--lilac { background: #ede9fe; }
+        .space-panel--teal { background: #ccfbf1; }
+        .space-media { position: relative; width: calc(100% + 44px); height: 178px; flex: 0 0 178px; margin: -22px -22px 0; overflow: hidden; background: #dbe3e9; }
+        .space-slide { position: absolute; inset: 0; margin: 0; opacity: 0; transition: opacity .65s ease; }
+        .space-slide.is-active { opacity: 1; }
+        .space-photo { display: block; width: 100%; height: 100%; object-fit: cover; }
+        .space-slideshow-controls { position: absolute; right: 9px; bottom: 9px; z-index: 1; display: flex; align-items: center; gap: 5px; padding: 5px; background: rgba(8, 35, 56, .78); color: #fff; }
+        .space-slideshow-controls[hidden] { display: none; }
+        .space-slideshow-controls button { display: grid; width: 30px; height: 30px; place-items: center; padding: 0; border: 1px solid rgba(255, 255, 255, .56); background: transparent; color: #fff; font: inherit; font-size: 18px; line-height: 1; cursor: pointer; }
+        .space-slideshow-controls button:hover { background: rgba(255, 255, 255, .18); }
+        .space-slideshow-controls button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+        .space-slide-count { min-width: 43px; padding-inline: 3px; color: #fff; font-size: 10px; font-variant-numeric: tabular-nums; text-align: center; }
         .space-index { position: relative; z-index: 1; margin-top: 15px; color: var(--yzu-blue); }
         .space-mark {
             position: absolute;
@@ -637,6 +704,7 @@ function e(string $value): string
             .hero-layout { grid-template-columns: 1fr 1fr; gap: 20px; }
             .hero h1 { font-size: clamp(42px, 7vw, 68px); }
             .hero-art { min-height: 420px; }
+            .spaces-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .room-card-content { padding-inline: 18px; }
             .room-card p { min-height: 96px; }
             .daily-layout, .housing-layout { gap: 50px; }
@@ -898,7 +966,7 @@ function e(string $value): string
                         </article>
                     <?php endforeach; ?>
                 </div>
-                <p class="rooms-footnote"><span>Note</span> Each bed comes with a personal desk, chair, wardrobe, and internet connection.</p>
+                <p class="rooms-footnote"><span>Note</span> Dormitories 1 and 2 have shared bathrooms and no private balcony. Dormitories 3A and 3B are higher-cost suites with a private bathroom and balcony in every room.</p>
             </div>
         </section>
 
@@ -922,7 +990,7 @@ function e(string $value): string
                     <p class="room-dialog-type"></p>
                     <p class="room-dialog-description" id="room-dialog-description"></p>
                     <ul class="room-dialog-highlights"></ul>
-                    <p class="room-dialog-note">Images are placeholders. Check the official YZU Housing Service portal for current room details and availability.</p>
+                    <p class="room-dialog-note">Confirm room assignments, fees, and availability with the official YZU Student Housing Service.</p>
                 </div>
             </div>
         </dialog>
@@ -963,12 +1031,26 @@ function e(string $value): string
                         <div class="eyebrow section-kicker">Living & Learning Facilities</div>
                         <h2 id="spaces-title">Everything you need,<br>right on campus.</h2>
                     </div>
-                    <p>Designed across five key dimensions: food, clothing, housing, education, and recreation.</p>
+                    <p>Explore the dining, study, fitness, health, and student-support spaces available around campus.</p>
                 </div>
                 <div class="spaces-grid">
                     <?php foreach ($spaces as $space): ?>
                         <article class="space-panel <?= e($space['tone']) ?>">
-                                <img class="space-photo" src="<?= e($space['image']) ?>" alt="<?= e($space['imageAlt']) ?>" loading="lazy" decoding="async">
+                            <div class="space-media"<?= count($space['slides']) > 1 ? ' data-space-slideshow role="group" aria-roledescription="carousel" aria-label="' . e($space['name']) . ' photos"' : '' ?>>
+                                <?php foreach ($space['slides'] as $slideIndex => $slide): ?>
+                                    <figure class="space-slide<?= $slideIndex === 0 ? ' is-active' : '' ?>" aria-hidden="<?= $slideIndex === 0 ? 'false' : 'true' ?>">
+                                        <img class="space-photo" src="<?= e($slide['image']) ?>" alt="<?= e($slide['alt']) ?>" loading="lazy" decoding="async">
+                                    </figure>
+                                <?php endforeach; ?>
+                                <?php if (count($space['slides']) > 1): ?>
+                                    <div class="space-slideshow-controls" hidden>
+                                        <button type="button" data-space-previous aria-label="Previous image">‹</button>
+                                        <button type="button" data-space-toggle aria-label="Pause automatic slideshow" aria-pressed="true">Ⅱ</button>
+                                        <span class="space-slide-count">1 / <?= count($space['slides']) ?></span>
+                                        <button type="button" data-space-next aria-label="Next image">›</button>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
                             <div class="space-index"><?= e($space['index']) ?></div>
                             <span class="space-mark" aria-hidden="true"><?= e($space['mark']) ?></span>
                             <div class="space-copy">
@@ -1160,6 +1242,89 @@ function e(string $value): string
             });
             dialog.addEventListener('close', () => {
                 if (activeTrigger?.isConnected) activeTrigger.focus();
+            });
+
+            const slideshowPrefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            document.querySelectorAll('[data-space-slideshow]').forEach((carousel) => {
+                const slides = Array.from(carousel.querySelectorAll('.space-slide'));
+                const controls = carousel.querySelector('.space-slideshow-controls');
+                const previousButton = controls.querySelector('[data-space-previous]');
+                const nextButton = controls.querySelector('[data-space-next]');
+                const toggleButton = controls.querySelector('[data-space-toggle]');
+                const counter = controls.querySelector('.space-slide-count');
+                let currentSlide = 0;
+                let automatic = !slideshowPrefersReducedMotion;
+                let inView = !('IntersectionObserver' in window);
+                let hovered = false;
+                let focused = false;
+                let timer = null;
+
+                controls.hidden = false;
+
+                const showSlide = (nextIndex) => {
+                    currentSlide = (nextIndex + slides.length) % slides.length;
+                    slides.forEach((slide, index) => {
+                        const active = index === currentSlide;
+                        slide.classList.toggle('is-active', active);
+                        slide.setAttribute('aria-hidden', String(!active));
+                    });
+                    counter.textContent = `${currentSlide + 1} / ${slides.length}`;
+                };
+
+                const updateTimer = () => {
+                    window.clearInterval(timer);
+                    timer = null;
+                    if (automatic && inView && !hovered && !focused && !document.hidden) {
+                        timer = window.setInterval(() => showSlide(currentSlide + 1), 5200);
+                    }
+                };
+
+                const step = (direction) => {
+                    showSlide(currentSlide + direction);
+                    updateTimer();
+                };
+
+                previousButton.addEventListener('click', () => step(-1));
+                nextButton.addEventListener('click', () => step(1));
+                toggleButton.addEventListener('click', () => {
+                    automatic = !automatic;
+                    toggleButton.setAttribute('aria-pressed', String(automatic));
+                    toggleButton.setAttribute('aria-label', automatic ? 'Pause automatic slideshow' : 'Play automatic slideshow');
+                    toggleButton.textContent = automatic ? 'Ⅱ' : '▶';
+                    updateTimer();
+                });
+
+                carousel.addEventListener('pointerenter', () => {
+                    hovered = true;
+                    updateTimer();
+                });
+                carousel.addEventListener('pointerleave', () => {
+                    hovered = false;
+                    updateTimer();
+                });
+                carousel.addEventListener('focusin', () => {
+                    focused = true;
+                    updateTimer();
+                });
+                carousel.addEventListener('focusout', (event) => {
+                    if (!carousel.contains(event.relatedTarget)) {
+                        focused = false;
+                        updateTimer();
+                    }
+                });
+                document.addEventListener('visibilitychange', updateTimer);
+
+                if ('IntersectionObserver' in window) {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach((entry) => {
+                            inView = entry.isIntersecting;
+                            updateTimer();
+                        });
+                    }, { threshold: 0.1 });
+                    observer.observe(carousel);
+                }
+
+                updateTimer();
             });
 
             const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
