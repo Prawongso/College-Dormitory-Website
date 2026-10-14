@@ -35,7 +35,7 @@ $roomTypes = [
         'gallery' => [
             ['src' => 'assets/dorm-1-room.webp', 'alt' => 'Dormitory 1 shared room with bunk beds and personal desks'],
             ['src' => 'assets/dorm-1-bathroom.webp', 'alt' => 'Bathroom facilities in Dormitory 1'],
-            ['src' => 'assets/dorm-1-kitchen.webp', 'alt' => 'Shared kitchen area in Dormitory 1'],
+            ['src' => 'assets/dorm-1-kitchen.webp', 'alt' => 'Updated shared kitchen in the men’s Dormitory 1'],
         ],
     ],
     [
@@ -67,11 +67,12 @@ $roomTypes = [
         'detail' => 'Women’s residence · Private bathroom and balcony',
         'class' => 'room-card--shared',
         'symbol' => 'door',
-        'cover' => 'assets/dorm-3-building.webp',
-        'coverAlt' => 'Exterior of the shared building that contains Dormitories 3A and 3B',
+        'cover' => 'assets/dorm-3-bedroom.webp',
+        'coverAlt' => 'Shared Dormitory 3 suite bedroom with a raised bed and desk',
         'features' => ['Women’s residence', 'Private bathroom and balcony in every room', 'Same indoor suite layout as Dormitory 3B', 'Higher-cost than Dormitories 1 and 2'],
         'gallery' => [
-            ['src' => 'assets/dorm-3-building.webp', 'alt' => 'Exterior of the shared building that contains Dormitories 3A and 3B'],
+            ['src' => 'assets/dorm-3-bedroom.webp', 'alt' => 'Shared Dormitory 3 suite bedroom with a raised bed and desk'],
+            ['src' => 'assets/dorm-outside-1.webp', 'alt' => 'Another exterior view of the Dormitory 3 area'],
             ['src' => 'assets/shared-laundry.webp', 'alt' => 'Shared laundry facilities serving the Dormitory 3 balconies'],
         ],
     ],
@@ -83,11 +84,11 @@ $roomTypes = [
         'detail' => 'Men’s residence · Private bathroom and balcony',
         'class' => 'room-card--shared',
         'symbol' => 'door',
-        'cover' => 'assets/dorm-3-building.webp',
-        'coverAlt' => 'Exterior of the shared building that contains Dormitories 3A and 3B',
+        'cover' => 'assets/dorm-3-bedroom.webp',
+        'coverAlt' => 'Shared Dormitory 3 suite bedroom with a raised bed and desk',
         'features' => ['Men’s residence', 'Private bathroom and balcony in every room', 'Same indoor suite layout as Dormitory 3A', 'Higher-cost than Dormitories 1 and 2'],
         'gallery' => [
-            ['src' => 'assets/dorm-3-building.webp', 'alt' => 'Exterior of the shared building that contains Dormitories 3A and 3B'],
+            ['src' => 'assets/dorm-3-bedroom.webp', 'alt' => 'Shared Dormitory 3 suite bedroom with a raised bed and desk'],
             ['src' => 'assets/shared-laundry.webp', 'alt' => 'Shared laundry facilities serving the Dormitory 3 balconies'],
         ],
     ],
@@ -131,6 +132,10 @@ $spaces = [
         'mark' => 'S',
         'tone' => 'space-panel--sage',
         'slides' => [
+            ['image' => 'assets/student-lounge-angle-1.webp', 'alt' => 'Student lounge at the Learning Commons with shared tables'],
+            ['image' => 'assets/student-lounge-angle-2.webp', 'alt' => 'Another view of tables and seating in the Learning Commons student lounge'],
+            ['image' => 'assets/student-lounge-angle-3.webp', 'alt' => 'Seating area by the windows in the Learning Commons student lounge'],
+            ['image' => 'assets/student-lounge-angle-4.webp', 'alt' => 'Shared work tables at the Learning Commons student lounge'],
             ['image' => 'assets/dorm-1-study.webp', 'alt' => 'Study room with desks and chairs in Dormitory 1'],
             ['image' => 'assets/dorm-2-study-angle-1.webp', 'alt' => 'Study room and desks in Dormitory 2, wide view'],
             ['image' => 'assets/dorm-2-study-angle-2.webp', 'alt' => 'Study room in Dormitory 2, view of the seating area'],
@@ -176,7 +181,7 @@ $spaces = [
         'slides' => [
             ['image' => 'assets/student-affairs-office.webp', 'alt' => 'Student Affairs office area on campus'],
             ['image' => 'assets/student-affairs-info.webp', 'alt' => 'Student Affairs information and organization display'],
-            ['image' => 'assets/dorm-2-building.webp', 'alt' => 'Exterior of Dormitory 2, where the Management Center is on the first floor'],
+            ['image' => 'assets/student-affairs-building.webp', 'alt' => 'Student Affairs building on campus'],
         ],
     ],
     [
@@ -187,6 +192,7 @@ $spaces = [
         'tone' => 'space-panel--teal',
         'slides' => [
             ['image' => 'assets/medical-services.webp', 'alt' => 'Medical service room on the first floor of Dormitory 3'],
+            ['image' => 'assets/medical-services-building.webp', 'alt' => 'Exterior entrance to the campus Student Health Center'],
         ],
     ],
 ];
@@ -686,17 +692,20 @@ function e(string $value): string
         .closing-inner { display: flex; align-items: end; justify-content: space-between; gap: 42px; }
         .closing-copy .eyebrow { color: var(--yzu-accent); }
         .closing-copy h2 { max-width: 730px; margin: 12px 0 0; font-family: var(--sans); font-size: clamp(34px, 4.5vw, 54px); font-weight: 700; letter-spacing: -.03em; line-height: 1.1; color: var(--yzu-blue-deep); }
-        .closing-mark { position: relative; flex: 0 0 118px; height: 118px; border: 2px solid var(--yzu-blue); border-radius: 50%; background: #ffffff; }
-        .closing-mark::before { position: absolute; inset: 12px; border: 1px dashed var(--yzu-accent); border-radius: 50%; content: ""; }
-        .closing-mark span { position: absolute; z-index: 1; top: 50%; left: 50%; color: var(--yzu-blue); font-family: var(--sans); font-weight: 800; font-size: 20px; transform: translate(-50%, -50%); }
+        .closing-logo { display: block; width: 112px; height: 112px; flex: 0 0 112px; border-radius: 50%; background: #ffffff; object-fit: contain; }
 
         .site-footer { padding: 28px 0 30px; background: var(--yzu-blue-deep); color: var(--paper); }
-        .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+        .footer-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 16px 28px; }
         .footer-brand { display: flex; align-items: center; gap: 11px; }
-        .footer-brand .brand-seal { width: 34px; height: 34px; border-color: rgba(255, 255, 255, .55); background: transparent; color: var(--paper); font-size: 15px; }
-        .footer-brand strong { font-family: var(--sans); font-size: 14px; font-weight: 600; }
-        .footer-note { max-width: 400px; margin: 0; color: rgba(255, 255, 255, .67); font-size: 10px; text-align: center; }
-        .footer-top { color: var(--paper); font-size: 10px; letter-spacing: .13em; text-decoration: none; text-transform: uppercase; font-weight: 700; }
+        .footer-brand { grid-column: 1 / -1; }
+        .footer-brand-logo { display: block; width: 46px; height: 46px; flex: 0 0 46px; border-radius: 50%; background: #ffffff; object-fit: contain; }
+        .footer-brand strong { font-family: var(--sans); font-size: 13px; font-weight: 700; letter-spacing: .08em; }
+        .footer-contact { display: grid; gap: 5px; min-width: 0; max-width: 1050px; color: rgba(255, 255, 255, .84); font-size: 11px; }
+        .footer-contact-title { margin: 0 0 1px; color: rgba(255, 255, 255, .68); font-family: var(--sans); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+        .footer-contact p { margin: 0; line-height: 1.75; overflow-wrap: anywhere; }
+        .footer-contact .footer-contact-hotline { color: #ffffff; font-size: 13px; font-weight: 700; }
+        .footer-contact a { color: inherit; text-decoration-color: rgba(255, 255, 255, .5); text-underline-offset: 3px; }
+        .footer-top { grid-column: 2; align-self: end; margin-bottom: 3px; color: var(--paper); font-size: 10px; letter-spacing: .13em; text-decoration: none; text-transform: uppercase; font-weight: 700; white-space: nowrap; }
         .footer-top:hover { color: #93c5fd; }
 
         @media (max-width: 900px) {
@@ -818,10 +827,12 @@ function e(string $value): string
             .closing { padding: 63px 0; }
             .closing-inner { align-items: center; gap: 20px; }
             .closing-copy h2 { font-size: clamp(30px, 8vw, 42px); }
-            .closing-mark { flex-basis: 72px; height: 72px; }
-            .closing-mark::before { inset: 7px; }
-            .footer-inner { align-items: flex-start; flex-wrap: wrap; }
-            .footer-note { order: 3; flex: 0 0 100%; max-width: none; text-align: left; }
+            .closing-logo { width: 68px; height: 68px; flex-basis: 68px; }
+            .footer-inner { display: flex; align-items: flex-start; flex-direction: column; gap: 17px; }
+            .footer-brand { align-items: center; }
+            .footer-brand strong { font-size: 11px; }
+            .footer-contact { font-size: 10px; }
+            .footer-top { align-self: flex-start; }
         }
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
@@ -1135,18 +1146,23 @@ function e(string $value): string
                     <div class="eyebrow">Yuan Ze University</div>
                     <h2>Join our community.<br>Your campus home awaits.</h2>
                 </div>
-                <div class="closing-mark" aria-hidden="true"><span>YZU</span></div>
+                <img class="closing-logo" src="assets/yzu-logo.webp" alt="Yuan Ze University logo" width="112" height="112">
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer" id="contact">
         <div class="wrap footer-inner">
             <div class="footer-brand">
-                <span class="brand-seal" aria-hidden="true"><?= e($hallInitial) ?></span>
-                <strong><?= e($residence['hall']) ?> <span aria-hidden="true">·</span> <?= e($residence['school']) ?></strong>
+                <img class="footer-brand-logo" src="assets/yzu-logo.webp" alt="" aria-hidden="true" width="46" height="46">
+                <strong>STUDENT HOUSING SERVICE SECTION</strong>
             </div>
-            <p class="footer-note">Office of Student Affairs - Student Housing Service Section. For current details, consult official YZU resources.</p>
+            <section class="footer-contact" aria-labelledby="footer-contact-title">
+                <h2 class="footer-contact-title" id="footer-contact-title">Contact Student Housing Service</h2>
+                <p class="footer-contact-hotline"><strong>Service Hotline:</strong> <a href="tel:034639900">03-4639900</a> Ext.➤➤➤</p>
+                <p>Counseling: 2880, 2868 │ Maintenance: 2865 │ Bed Allocation: 2867 │ Student Cafeteria: 2869 │</p>
+                <p>Male Dorm Counter: 2881 │ Female Dorm Counter: 2882 │ Dormitory Office (24hrs): <a href="tel:0903032011">0903032011</a></p>
+            </section>
             <a class="footer-top" href="#top">Back to top ↑</a>
         </div>
     </footer>
