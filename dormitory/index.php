@@ -89,6 +89,7 @@ $roomTypes = [
         'features' => ['Men’s residence', 'Private bathroom and balcony in every room', 'Same indoor suite layout as Dormitory 3A', 'Higher-cost than Dormitories 1 and 2'],
         'gallery' => [
             ['src' => 'assets/dorm-3-bedroom.webp', 'alt' => 'Shared Dormitory 3 suite bedroom with a raised bed and desk'],
+            ['src' => 'assets/dorm-3-building.webp', 'alt' => 'Exterior view of the shared Dormitory 3 building'],
             ['src' => 'assets/shared-laundry.webp', 'alt' => 'Shared laundry facilities serving the Dormitory 3 balconies'],
         ],
     ],
@@ -191,8 +192,8 @@ $spaces = [
         'mark' => 'M',
         'tone' => 'space-panel--teal',
         'slides' => [
-            ['image' => 'assets/medical-services.webp', 'alt' => 'Medical service room on the first floor of Dormitory 3'],
             ['image' => 'assets/medical-services-building.webp', 'alt' => 'Exterior entrance to the campus Student Health Center'],
+            ['image' => 'assets/medical-services.webp', 'alt' => 'Medical service room on the first floor of Dormitory 3'],
         ],
     ],
 ];
