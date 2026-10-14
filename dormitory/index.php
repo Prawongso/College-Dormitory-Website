@@ -220,12 +220,12 @@ $officialHousingLinks = [
         'href' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/su-she-fu-wu/new',
     ],
     [
-        'label' => 'Dormitory Introduction & Application',
+        'label' => 'Dormitory Introduction',
         'href' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/?option=com_sppagebuilder&view=page&id=108',
     ],
     [
-        'label' => 'Dorm Q & A',
-        'href' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/su-she-fu-wu/2016-07-19-01-33-33',
+        'label' => 'Dorm application',
+        'href' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/su-she-fu-wu/zhu-su-shen-qing',
     ],
 ];
 
@@ -700,6 +700,10 @@ function e(string $value): string
         .faq-layout { display: grid; grid-template-columns: .74fr 1.26fr; gap: clamp(38px, 9vw, 132px); }
         .faq-title h2 { max-width: 390px; margin: 13px 0 17px; font-family: var(--sans); font-size: clamp(38px, 5vw, 56px); font-weight: 700; letter-spacing: -.03em; line-height: 1.05; color: var(--yzu-blue-deep); }
         .faq-title p { max-width: 300px; margin: 0; color: var(--ink-soft); font-size: 13px; }
+        .faq-official-link { display: inline-flex; align-items: center; gap: 9px; margin-top: 22px; color: var(--yzu-blue); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
+        .faq-official-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+        .faq-official-link:focus-visible { outline: 3px solid var(--yzu-accent); outline-offset: 4px; }
+        .faq-official-link span { font-size: 15px; }
         .faq-list { border-top: 1px solid var(--line); }
         .faq-list details { border-bottom: 1px solid var(--line); }
         .faq-list summary { position: relative; display: flex; min-height: 67px; align-items: center; justify-content: space-between; gap: 20px; padding: 14px 0; cursor: pointer; list-style: none; font-family: var(--sans); font-weight: 600; font-size: 17px; color: var(--yzu-blue-deep); }
@@ -1195,6 +1199,9 @@ function e(string $value): string
                     <div class="eyebrow section-kicker">Helpful Answers</div>
                     <h2 id="faq-title">Frequently asked questions.</h2>
                     <p>Everything you need to know about living in Yuan Ze University student housing.</p>
+                    <a class="faq-official-link" href="https://www.yzu.edu.tw/admin/st/index.php/tw/su-she-fu-wu/2016-07-19-01-33-33" target="_blank" rel="noopener noreferrer">
+                        Dorm Q &amp; A <span aria-hidden="true">↗</span>
+                    </a>
                 </div>
                 <div class="faq-list">
                     <?php foreach ($faqs as $index => $faq): ?>
