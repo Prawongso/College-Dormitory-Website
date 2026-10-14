@@ -23,47 +23,85 @@ $navItems = [
 $roomTypes = [
     [
         'number' => '01',
-        'name' => 'First & Second Dormitory',
+        'name' => 'Dormitory 1',
         'type' => 'Quad Room (Standard)',
         'description' => 'The main residential area for freshmen and international students. Each bed comes with its own desk, chair, wardrobe, and private internet connection.',
-        'detail' => 'Campus Community Living',
+        'detail' => 'Dormitory 1 · Campus Community',
         'class' => 'room-card--single',
         'symbol' => 'beds',
+        'cover' => 'assets/dorm-1-room.webp',
+        'coverAlt' => 'Dormitory 1 shared room with bunk beds and personal desks',
         'features' => ['Four-person room', 'Personal desk and wardrobe', 'Private internet connection'],
         'gallery' => [
-            ['src' => 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Bright shared student room with warm wood furniture'],
-            ['src' => 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Neatly made bed in a calm, light-filled room'],
-            ['src' => 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Comfortable residence lounge with soft seating'],
+            ['src' => 'assets/dorm-1-room.webp', 'alt' => 'Dormitory 1 shared room with bunk beds and personal desks'],
+            ['src' => 'assets/dorm-1-bathroom.webp', 'alt' => 'Bathroom facilities in Dormitory 1'],
+            ['src' => 'assets/dorm-1-kitchen.webp', 'alt' => 'Shared kitchen area in Dormitory 1'],
         ],
     ],
     [
         'number' => '02',
-        'name' => 'Third Dormitory',
-        'type' => 'Suite-Style Living',
-        'description' => 'Spacious suite-style layout featuring central air conditioning, ensuite bathrooms, and personal drying balconies for local senior students.',
-        'detail' => 'Modern Suite Comfort',
-        'class' => 'room-card--shared',
-        'symbol' => 'door',
-        'features' => ['Suite-style floor plan', 'Central air conditioning', 'Ensuite bathroom and drying balcony'],
+        'name' => 'Dormitory 2',
+        'type' => 'Quad Room (Standard)',
+        'description' => 'The main residential area for freshmen and international students. Each bed comes with its own desk, chair, wardrobe, and private internet connection.',
+        'detail' => 'Dormitory 2 · Campus Community',
+        'class' => 'room-card--single',
+        'symbol' => 'beds',
+        'cover' => 'assets/dorm-2-room.webp',
+        'coverAlt' => 'Dormitory 2 shared room with bunk beds and built-in desks',
+        'features' => ['Four-person room', 'Personal desk and wardrobe', 'Private internet connection'],
         'gallery' => [
-            ['src' => 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Modern suite lounge with a bright, open layout'],
-            ['src' => 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Contemporary private room with a large window'],
-            ['src' => 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Clean suite interior with a study and sitting area'],
+            ['src' => 'assets/dorm-2-room.webp', 'alt' => 'Dormitory 2 shared room with bunk beds and built-in desks'],
+            ['src' => 'assets/dorm-2-corridor.webp', 'alt' => 'Hallway connecting rooms in Dormitory 2'],
+            ['src' => 'assets/dorm-2-bathroom.webp', 'alt' => 'Bathroom facilities in Dormitory 2'],
         ],
     ],
     [
         'number' => '03',
+        'name' => 'Dormitory 3A',
+        'type' => 'Suite-Style Living',
+        'description' => 'Spacious suite-style layout featuring central air conditioning, ensuite bathrooms, and personal drying balconies for local senior students.',
+        'detail' => 'Dormitory 3A · Modern Suite',
+        'class' => 'room-card--shared',
+        'symbol' => 'door',
+        'cover' => 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=1400&q=82',
+        'coverAlt' => 'Illustrative suite lounge; not a confirmed Dormitory 3A photo',
+        'features' => ['Suite-style floor plan', 'Central air conditioning', 'Ensuite bathroom and drying balcony'],
+        'gallery' => [
+            ['src' => 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Illustrative suite lounge; not a confirmed Dormitory 3A photo'],
+            ['src' => 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Illustrative reference room; not a confirmed Dormitory 3A photo'],
+            ['src' => 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Illustrative reference suite; not a confirmed Dormitory 3A photo'],
+        ],
+    ],
+    [
+        'number' => '04',
+        'name' => 'Dormitory 3B',
+        'type' => 'Suite-Style Living',
+        'description' => 'Spacious suite-style layout featuring central air conditioning, ensuite bathrooms, and personal drying balconies for local senior students.',
+        'detail' => 'Dormitory 3B · Modern Suite',
+        'class' => 'room-card--shared',
+        'symbol' => 'door',
+        'features' => ['Suite-style floor plan', 'Central air conditioning', 'Ensuite bathroom and drying balcony'],
+        'gallery' => [
+            ['src' => 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Illustrative reference suite lounge; not a confirmed Dormitory 3B photo'],
+            ['src' => 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Illustrative reference room; not a confirmed Dormitory 3B photo'],
+            ['src' => 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Illustrative reference suite; not a confirmed Dormitory 3B photo'],
+        ],
+    ],
+    [
+        'number' => '05',
         'name' => 'Jih-Shian Building',
         'type' => 'Off-Campus Residence',
         'description' => 'Conveniently located just a short 4-minute walk from campus, offering modern suite living with full facility support.',
         'detail' => 'Nearby Off-Campus Option',
         'class' => 'room-card--suite',
         'symbol' => 'window',
+        'cover' => 'assets/jih-shian-single.webp',
+        'coverAlt' => 'Single room at the Jih-Shian residence',
         'features' => ['About four minutes from campus', 'Modern suite living', 'Facility support nearby'],
         'gallery' => [
-            ['src' => 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Welcoming shared living area in a modern residence'],
-            ['src' => 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Sunny bedroom with a comfortable study corner'],
-            ['src' => 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=82', 'alt' => 'Relaxed common lounge with inviting seating'],
+            ['src' => 'assets/jih-shian-single.webp', 'alt' => 'Single room at the Jih-Shian residence'],
+            ['src' => 'assets/jih-shian-double-a.webp', 'alt' => 'Two-person room at the Jih-Shian residence'],
+            ['src' => 'assets/jih-shian-double-b.webp', 'alt' => 'Another view of a two-person Jih-Shian room'],
         ],
     ],
 ];
@@ -75,6 +113,8 @@ $spaces = [
         'text' => 'Located right around the residence blocks with restaurants, convenience stores, cafés, and an ATM network to meet all daily needs.',
         'mark' => 'F',
         'tone' => 'space-panel--rose',
+        'image' => 'assets/dorm-1-dining.webp',
+        'imageAlt' => 'Student dining area with tables and chairs at the residence',
     ],
     [
         'index' => '02 / STUDY',
@@ -82,6 +122,8 @@ $spaces = [
         'text' => 'Quiet student lounges, reading rooms, and comfortable spaces designed for collaborative study or relaxed conversations.',
         'mark' => 'S',
         'tone' => 'space-panel--sage',
+        'image' => 'assets/dorm-1-study.webp',
+        'imageAlt' => 'Bright study room with desks and chairs inside the residence',
     ],
     [
         'index' => '03 / CARE',
@@ -89,6 +131,8 @@ $spaces = [
         'text' => 'Equipped with simple kitchens, Muslim prayer rooms, laundry balconies, coin-operated washers, and 24-hour support.',
         'mark' => 'W',
         'tone' => 'space-panel--gold',
+        'image' => 'assets/dorm-1-kitchen.webp',
+        'imageAlt' => 'Shared kitchen counter and sink in the residence',
     ],
 ];
 
@@ -119,6 +163,37 @@ $faqs = [
     ],
 ];
 
+$studentResources = [
+    [
+        'label' => 'Facilities',
+        'title' => 'Residence facilities overview',
+        'description' => 'This Traditional Chinese guide summarizes room equipment, shared facilities inside the halls, and nearby conveniences such as food, shops, mail, and ATMs.',
+        'image' => 'assets/dorm-features-guide.webp',
+        'alt' => 'Traditional Chinese infographic listing dorm-room equipment, residence facilities, and nearby services.',
+    ],
+    [
+        'label' => 'Room planning',
+        'title' => 'Bed and desk dimensions',
+        'description' => 'A visual guide to approximate dimensions for a dorm bed and study area. The source notes that actual room measurements may vary.',
+        'image' => 'assets/room-dimensions-guide.webp',
+        'alt' => 'Traditional Chinese dorm-room diagram marking approximate bunk-bed, shelf, and desk dimensions.',
+    ],
+    [
+        'label' => 'Residence rules · 1',
+        'title' => 'Everyday and serious violations',
+        'description' => 'The chart lists 5- and 10-point violations, including noise, shared-space clutter, unauthorized appliances, room cooking, prohibited items, and pets.',
+        'image' => 'assets/dorm-rules-1.webp',
+        'alt' => 'Traditional Chinese residence-rules poster describing 5- and 10-point violations.',
+    ],
+    [
+        'label' => 'Residence rules · 2',
+        'title' => 'Major violations and penalties',
+        'description' => 'The chart covers 15- and 25-point violations, including smoking, property damage, unauthorized bed changes or guests, and the consequences shown on the poster.',
+        'image' => 'assets/dorm-rules-2.webp',
+        'alt' => 'Traditional Chinese residence-rules poster describing 15- and 25-point violations and penalties.',
+    ],
+];
+
 function e(string $value): string
 {
     return htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
@@ -136,6 +211,7 @@ function e(string $value): string
             color-scheme: light;
             --paper: #f0f4f8;
             --paper-deep: #e2e8f0;
+            --paper-tint: #eaf0f6;
             --ink: #1e293b;
             --ink-soft: #475569;
             --yzu-blue: #0f3c5d;
@@ -223,6 +299,7 @@ function e(string $value): string
             font-size: 19px;
             font-style: italic;
         }
+        .brand-logo { display: block; width: 48px; height: 48px; flex: 0 0 auto; object-fit: contain; }
         .brand-text { display: grid; line-height: 1.15; }
         .brand-text strong { font-family: var(--sans); font-size: 15px; font-weight: 700; color: var(--yzu-blue-deep); }
         .brand-text span { margin-top: 2px; color: var(--ink-soft); font-size: 9px; letter-spacing: .13em; text-transform: uppercase; }
@@ -298,7 +375,7 @@ function e(string $value): string
             min-height: 500px;
             isolation: isolate;
         }
-        .hero-art svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+        .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; border: 1px solid rgba(15, 60, 93, .16); object-fit: cover; }
         .hero-caption {
             position: absolute;
             z-index: 2;
@@ -388,9 +465,14 @@ function e(string $value): string
         }
         .section-heading p { max-width: 280px; margin: 0 0 4px; color: var(--ink-soft); font-size: 13px; }
         .room-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+        .room-grid--five { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+        .room-grid--five .room-card { grid-column: span 2; }
+        .room-grid--five .room-card:nth-child(4) { grid-column: 2 / span 2; }
+        .room-grid--five .room-card:nth-child(5) { grid-column: 4 / span 2; }
         .room-card { min-width: 0; background: var(--paper); border: 1px solid var(--line); }
         .room-card-art { position: relative; overflow: hidden; height: 235px; background: #cbd5e1; }
         .room-graphic { position: absolute; inset: 0; width: 100%; height: 100%; }
+        .room-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
         .room-type { position: absolute; top: 16px; left: 17px; padding: 8px 9px; background: rgba(240, 244, 248, .95); color: var(--yzu-blue); border: 1px solid var(--line); }
         .room-card-content { padding: 25px 25px 26px; }
         .room-card-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
@@ -455,11 +537,12 @@ function e(string $value): string
         .spaces-section .section-heading h2 { max-width: 720px; color: #ffffff; }
         .spaces-section .section-heading p { color: rgba(255, 255, 255, .72); }
         .spaces-grid { display: grid; grid-template-columns: 1.15fr .92fr .92fr; align-items: stretch; gap: 13px; }
-        .space-panel { position: relative; display: flex; min-height: 330px; flex-direction: column; justify-content: space-between; overflow: hidden; padding: 22px; color: var(--ink); border: 1px solid rgba(255,255,255,0.1); }
+        .space-panel { position: relative; display: flex; min-height: 380px; flex-direction: column; justify-content: space-between; overflow: hidden; padding: 22px; color: var(--ink); border: 1px solid rgba(255,255,255,0.1); }
         .space-panel--rose { background: #e0f2fe; }
         .space-panel--sage { background: #e2e8f0; }
         .space-panel--gold { background: #fef3c7; }
-        .space-index { position: relative; z-index: 1; color: var(--yzu-blue); }
+        .space-photo { display: block; width: calc(100% + 44px); height: 178px; flex: 0 0 178px; margin: -22px -22px 0; object-fit: cover; }
+        .space-index { position: relative; z-index: 1; margin-top: 15px; color: var(--yzu-blue); }
         .space-mark {
             position: absolute;
             top: 18px;
@@ -470,8 +553,9 @@ function e(string $value): string
             font-size: clamp(135px, 18vw, 245px);
             line-height: .8;
             pointer-events: none;
+            display: none;
         }
-        .space-copy { position: relative; z-index: 1; max-width: 305px; }
+        .space-copy { position: relative; z-index: 1; max-width: 305px; margin-top: auto; }
         .space-copy h3 { margin: 0 0 10px; font-family: var(--sans); font-size: clamp(24px, 2.5vw, 32px); font-weight: 700; color: var(--yzu-blue-deep); letter-spacing: -.02em; }
         .space-copy p { margin: 0; max-width: 290px; color: var(--ink-soft); font-size: 12px; line-height: 1.7; }
         .spaces-tail { display: flex; justify-content: flex-end; margin-top: 23px; color: rgba(255, 255, 255, .72); font-size: 13px; font-weight: 500; }
@@ -516,6 +600,21 @@ function e(string $value): string
         .faq-answer { max-width: 560px; padding: 0 35px 19px 0; color: var(--ink-soft); font-size: 12px; }
         .faq-answer p { margin: 0; }
 
+        .student-essentials { padding: 103px 0 111px; background: var(--paper-tint); }
+        .resource-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: stretch; gap: 16px; }
+        .resource-card { min-width: 0; overflow: hidden; background: var(--paper); border: 1px solid var(--line); }
+        .resource-image { position: relative; display: block; padding: 12px; background: #ffffff; border-bottom: 1px solid var(--line); }
+        .resource-image img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: contain; background: #ffffff; transition: transform .35s ease; }
+        .resource-image:hover img { transform: scale(1.025); }
+        .resource-open { position: absolute; right: 19px; bottom: 19px; padding: 8px 10px; background: var(--yzu-blue); color: #ffffff; font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+        .resource-content { padding: 18px 19px 20px; }
+        .resource-label { color: var(--yzu-accent); font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+        .resource-content h3 { margin: 7px 0 9px; color: var(--yzu-blue-deep); font-family: var(--sans); font-size: 18px; line-height: 1.25; }
+        .resource-content p { margin: 0; color: var(--ink-soft); font-size: 11px; line-height: 1.65; }
+        .resource-language { margin-top: 13px !important; padding-top: 11px; border-top: 1px solid var(--line); color: var(--yzu-blue) !important; font-size: 9px !important; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+        .resource-note { max-width: 780px; margin: 22px 0 0; color: var(--ink-soft); font-size: 11px; }
+        .resource-note a, .guide-notice a { color: var(--yzu-blue); font-weight: 700; text-underline-offset: 3px; }
+
         .closing { overflow: hidden; padding: 76px 0 81px; background: var(--paper-deep); border-top: 1px solid var(--line); }
         .closing-inner { display: flex; align-items: end; justify-content: space-between; gap: 42px; }
         .closing-copy .eyebrow { color: var(--yzu-accent); }
@@ -541,12 +640,14 @@ function e(string $value): string
             .room-card-content { padding-inline: 18px; }
             .room-card p { min-height: 96px; }
             .daily-layout, .housing-layout { gap: 50px; }
+            .resource-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
         @media (max-width: 680px) {
             :root { --gutter: 22px; }
             html { scroll-padding-top: 74px; }
             .header-inner { min-height: 70px; }
             .brand-seal { width: 36px; height: 36px; }
+            .brand-logo { width: 42px; height: 42px; }
             .desktop-nav { display: none; }
             .mobile-menu { position: relative; display: block; }
             .mobile-menu summary {
@@ -602,11 +703,15 @@ function e(string $value): string
             .intro-copy h2 { font-size: clamp(28px, 8vw, 42px); }
             .intro-bottom { align-items: start; flex-direction: column; gap: 20px; margin-top: 22px; }
             .scribble { align-self: flex-end; }
-            .rooms-section, .spaces-section, .daily-section, .housing-section, .faq-section { padding: 76px 0 82px; }
+            .rooms-section, .spaces-section, .daily-section, .housing-section, .faq-section, .student-essentials { padding: 76px 0 82px; }
             .section-heading { align-items: start; flex-direction: column; gap: 17px; margin-bottom: 29px; }
             .section-heading h2 { font-size: clamp(32px, 9vw, 48px); }
             .section-heading p { max-width: 410px; }
             .room-grid { grid-template-columns: 1fr; gap: 15px; }
+            .room-grid--five { grid-template-columns: 1fr; }
+            .room-grid--five .room-card { grid-column: auto; }
+            .room-grid--five .room-card:nth-child(4),
+            .room-grid--five .room-card:nth-child(5) { grid-column: auto; }
             .room-card-art { height: 220px; }
             .room-card-content { padding: 22px; }
             .room-card h3 { font-size: 24px; }
@@ -623,9 +728,9 @@ function e(string $value): string
             .room-dialog-note { margin-top: 17px; }
             .rooms-footnote { align-items: flex-start; font-size: 10px; }
             .spaces-grid { grid-template-columns: 1fr; gap: 12px; }
-            .space-panel { min-height: 255px; }
-            .spaces-grid .space-panel:first-child { min-height: 300px; }
-            .space-mark { font-size: 180px; }
+            .space-panel { min-height: 350px; }
+            .spaces-grid .space-panel:first-child { min-height: 350px; }
+            .resource-grid { grid-template-columns: 1fr; gap: 14px; }
             .spaces-tail { font-size: 13px; }
             .daily-layout { grid-template-columns: 1fr; gap: 35px; }
             .daily-heading { position: static; }
@@ -664,7 +769,7 @@ function e(string $value): string
     <header class="site-header">
         <div class="wrap header-inner">
             <a class="brand" href="#top" aria-label="<?= e($residence['hall']) ?> home">
-                <span class="brand-seal" aria-hidden="true"><?= e($hallInitial) ?></span>
+                <img class="brand-logo" src="assets/yzu-logo.webp" alt="" aria-hidden="true" width="48" height="48">
                 <span class="brand-text">
                     <strong><?= e($residence['hall']) ?></strong>
                     <span><?= e($residence['school']) ?></span>
@@ -704,23 +809,9 @@ function e(string $value): string
                     </div>
                     <div class="hero-note"><?= e($residence['note']) ?></div>
                 </div>
-                <div class="hero-art" aria-label="Illustration of Yuan Ze University student housing">
+                <div class="hero-art">
                     <span class="hero-stamp" aria-hidden="true">YZU<br>Dormitory</span>
-                    <svg viewBox="0 0 720 590" role="img" aria-labelledby="building-title building-desc">
-                        <title id="building-title"><?= e($residence['hall']) ?>, Campus Housing</title>
-                        <desc id="building-desc">An illustration of modern university residence blocks with structured windows and balconies.</desc>
-                        <defs>
-                            <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
-                                <path d="M40 0H0V40" fill="none" stroke="#94a3b8" stroke-opacity=".3" stroke-width="1"/>
-                            </pattern>
-                        </defs>
-                        <circle cx="520" cy="140" r="70" fill="#93c5fd" opacity=".6"/>
-                        <path d="M0 450c140-30 250-10 380-20 130-10 210-40 340-10v150H0Z" fill="#cbd5e1"/>
-                        <rect x="120" y="150" width="480" height="300" rx="6" fill="#e2e8f0" stroke="#0f3c5d" stroke-width="4"/>
-                        <path d="M160 190h80v80h-80zM280 190h80v80h-80zM400 190h80v80h-80zM520 190h40v80h-40z" fill="#0f3c5d"/>
-                        <path d="M160 310h80v80h-80zM280 310h80v80h-80zM400 310h80v80h-80zM520 310h40v80h-40z" fill="#3b82f6" opacity=".8"/>
-                        <path d="M300 450v-60h120v60z" fill="#1e293b"/>
-                    </svg>
+                    <img class="hero-photo" src="assets/dorm-exterior.webp" alt="Exterior courtyard view of Yuan Ze University student residences" fetchpriority="high" decoding="async">
                     <div class="hero-caption">
                         <strong><?= e($residence['hall']) ?></strong>
                         <span><?= e($residence['school']) ?> · Taoyuan City</span>
@@ -761,12 +852,14 @@ function e(string $value): string
                     </div>
                     <p>From campus residence halls for freshmen and international students to modern suite options for senior students.</p>
                 </div>
-                <div class="room-grid">
+                <div class="room-grid<?= count($roomTypes) === 5 ? ' room-grid--five' : '' ?>">
                     <?php foreach ($roomTypes as $index => $room): ?>
                         <article class="room-card <?= e($room['class']) ?>">
                             <div class="room-card-art">
                                 <span class="room-type"><?= e($room['type']) ?></span>
-                                <?php if ($room['symbol'] === 'beds'): ?>
+                                <?php if (!empty($room['cover'])): ?>
+                                    <img class="room-photo" src="<?= e($room['cover']) ?>" alt="<?= e($room['coverAlt']) ?>" loading="lazy" decoding="async">
+                                <?php elseif ($room['symbol'] === 'beds'): ?>
                                     <svg class="room-graphic" viewBox="0 0 420 250" role="img" aria-label="Illustration of a standard quad dorm room">
                                         <rect width="420" height="250" fill="#e2e8f0"/>
                                         <path d="M0 193h420v57H0Z" fill="#cbd5e1"/>
@@ -834,6 +927,35 @@ function e(string $value): string
             </div>
         </dialog>
 
+        <section class="student-essentials" id="student-essentials" aria-labelledby="student-essentials-title">
+            <div class="wrap">
+                <div class="section-heading">
+                    <div>
+                        <div class="eyebrow section-kicker">New Resident Essentials</div>
+                        <h2 id="student-essentials-title">Plan for dorm life.</h2>
+                    </div>
+                    <p>Practical guides to dorm facilities, room dimensions, and residence rules. Open any poster to view it full size.</p>
+                </div>
+                <div class="resource-grid">
+                    <?php foreach ($studentResources as $resource): ?>
+                        <article class="resource-card">
+                            <a class="resource-image" href="<?= e($resource['image']) ?>" target="_blank" rel="noopener" aria-label="Open <?= e($resource['title']) ?> poster in a new tab">
+                                <img src="<?= e($resource['image']) ?>" alt="<?= e($resource['alt']) ?>" loading="lazy" decoding="async">
+                                <span class="resource-open" aria-hidden="true">Open poster ↗</span>
+                            </a>
+                            <div class="resource-content">
+                                <span class="resource-label"><?= e($resource['label']) ?></span>
+                                <h3><?= e($resource['title']) ?></h3>
+                                <p><?= e($resource['description']) ?></p>
+                                <p class="resource-language">Original guide · Traditional Chinese</p>
+                            </div>
+                        </article>
+                    <?php endforeach; ?>
+                </div>
+                <p class="resource-note">These source guides are in Traditional Chinese. The English summaries are for orientation; confirm current policies, application dates, and room details with the YZU Student Housing Service. Room measurements are approximate.</p>
+            </div>
+        </section>
+
         <section class="spaces-section" id="spaces" aria-labelledby="spaces-title">
             <div class="wrap">
                 <div class="section-heading">
@@ -846,6 +968,7 @@ function e(string $value): string
                 <div class="spaces-grid">
                     <?php foreach ($spaces as $space): ?>
                         <article class="space-panel <?= e($space['tone']) ?>">
+                                <img class="space-photo" src="<?= e($space['image']) ?>" alt="<?= e($space['imageAlt']) ?>" loading="lazy" decoding="async">
                             <div class="space-index"><?= e($space['index']) ?></div>
                             <span class="space-mark" aria-hidden="true"><?= e($space['mark']) ?></span>
                             <div class="space-copy">
@@ -887,7 +1010,7 @@ function e(string $value): string
                     <div class="eyebrow section-kicker">Accommodation Guide</div>
                     <h2 id="housing-title">Your application<br>next steps.</h2>
                     <p>Follow the official procedures managed by the Student Housing Service Section to secure your room.</p>
-                    <div class="guide-notice"><span aria-hidden="true">i</span><div><?= e($residence['note']) ?> Check official YZU announcements for exact application periods.</div></div>
+                <div class="guide-notice"><span aria-hidden="true">i</span><div><?= e($residence['note']) ?> Check official YZU announcements for exact application periods. <a href="#student-essentials">See facilities, room dimensions, and residence rules.</a></div></div>
                 </div>
                 <div>
                     <div class="steps">
