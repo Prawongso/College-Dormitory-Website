@@ -16,7 +16,7 @@ $hallInitial = 'Y';
 $roomTypes = [
     [
         'number' => '01',
-        'name' => '一舍',
+        'name' => '第一宿舍',
         'type' => '四人標準房・男生宿舍',
         'description' => '一舍為男生宿舍，採多人共住並共用公共設施。每個床位皆配置書桌、椅子、衣櫃與網路連線。',
         'detail' => '男生宿舍・共用設施',
@@ -33,7 +33,7 @@ $roomTypes = [
     ],
     [
         'number' => '02',
-        'name' => '二舍',
+        'name' => '第二宿舍',
         'type' => '四人標準房・女生宿舍',
         'description' => '二舍為女生宿舍，採多人共住並共用公共設施。每個床位皆配置書桌、椅子、衣櫃與網路連線。',
         'detail' => '女生宿舍・一樓設有管理中心',
@@ -54,7 +54,7 @@ $roomTypes = [
     ],
     [
         'number' => '03',
-        'name' => '三舍A',
+        'name' => '第三宿舍3A',
         'type' => '套房型・費用較高',
         'description' => '三舍A為女生宿舍，與三舍B位於同一棟建築，室內以隔牆分隔。每間房皆有獨立衛浴與陽台，室內格局與三舍B相同，住宿費高於一舍與二舍。',
         'detail' => '女生宿舍・每間皆有獨立衛浴與陽台',
@@ -71,7 +71,7 @@ $roomTypes = [
     ],
     [
         'number' => '04',
-        'name' => '三舍B',
+        'name' => '第三宿舍3B',
         'type' => '套房型・費用較高',
         'description' => '三舍B為男生宿舍，與三舍A位於同一棟建築，室內以隔牆分隔。每間房皆有獨立衛浴與陽台，室內格局與三舍A相同，住宿費高於一舍與二舍。',
         'detail' => '男生宿舍・每間皆有獨立衛浴與陽台',
@@ -88,19 +88,19 @@ $roomTypes = [
     ],
     [
         'number' => '05',
-        'name' => '濟賢宿舍',
+        'name' => '校外宿舍集賢樓',
         'type' => '校外宿舍',
         'description' => '步行至校園約四分鐘，提供單人或雙人公寓式住宿，並有網路與完整設施支援。',
         'detail' => '鄰近校園的校外住宿選擇',
         'class' => 'room-card--suite',
         'symbol' => 'window',
         'cover' => 'assets/jih-shian-single.webp',
-        'coverAlt' => '濟賢宿舍的單人房',
+        'coverAlt' => '校外宿舍集賢樓的單人房',
         'features' => ['距離校園步行約四分鐘', '公寓式住宿，可選單人或雙人房', '鄰近生活設施'],
         'gallery' => [
-            ['src' => 'assets/jih-shian-single.webp', 'alt' => '濟賢宿舍的單人房'],
-            ['src' => 'assets/jih-shian-double-a.webp', 'alt' => '濟賢宿舍的雙人房'],
-            ['src' => 'assets/jih-shian-double-b.webp', 'alt' => '從另一個角度拍攝的濟賢宿舍雙人房'],
+            ['src' => 'assets/jih-shian-single.webp', 'alt' => '校外宿舍集賢樓的單人房'],
+            ['src' => 'assets/jih-shian-double-a.webp', 'alt' => '校外宿舍集賢樓的雙人房'],
+            ['src' => 'assets/jih-shian-double-b.webp', 'alt' => '從另一個角度拍攝的校外宿舍集賢樓雙人房'],
         ],
     ],
 ];
