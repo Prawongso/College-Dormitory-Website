@@ -5,285 +5,292 @@ declare(strict_types=1);
  * Yuan Ze University - Student Housing Service Residence Page.
  */
 $residence = [
-    'school' => 'Yuan Ze University',
-    'hall' => 'YZU Student Dormitory',
-    'eyebrow' => 'Office of Student Affairs · Student Housing Service',
-    'intro' => 'Home away from home, cozy coexistence. Building a diverse and convenient living space with everything you need for your campus journey.',
-    'note' => 'A home for your university life — check the official YZU Housing Service portal for current bed allocations and rules.',
+    'school' => '元智大學',
+    'hall' => '元智大學學生宿舍',
+    'eyebrow' => '學務處・學生宿舍服務組',
+    'intro' => '在校園中找到自在的家，一起生活、彼此陪伴。打造多元便利的住宿空間，陪你展開校園生活。',
+    'note' => '大學生活的另一個家——床位分配與住宿規定，請以元智大學學生宿舍服務組公告為準。',
 ];
 $hallInitial = 'Y';
-
-$navItems = [
-    ['label' => 'Dormitory Types', 'href' => '#rooms'],
-    ['label' => 'Shared Spaces', 'href' => '#spaces'],
-    ['label' => 'Dorm Life', 'href' => '#daily-life'],
-    ['label' => 'Housing Guide', 'href' => '#housing-guide'],
-];
 
 $roomTypes = [
     [
         'number' => '01',
-        'name' => 'Dormitory 1',
-        'type' => "Standard Quad · Men's Residence",
-        'description' => 'A men’s residence with shared rooms and communal facilities. Each bed has its own desk, chair, wardrobe, and internet connection.',
-        'detail' => 'Men’s residence · Shared facilities',
+        'name' => '一舍',
+        'type' => '四人標準房・男生宿舍',
+        'description' => '一舍為男生宿舍，採多人共住並共用公共設施。每個床位皆配置書桌、椅子、衣櫃與網路連線。',
+        'detail' => '男生宿舍・共用設施',
         'class' => 'room-card--single',
         'symbol' => 'beds',
         'cover' => 'assets/dorm-1-room.webp',
-        'coverAlt' => 'Dormitory 1 shared room with bunk beds and personal desks',
-        'features' => ['Men’s residence', 'Shared bathroom facilities', 'Personal desk, chair, and wardrobe'],
+        'coverAlt' => '一舍共用房間，設有上下舖與個人書桌',
+        'features' => ['男生宿舍', '共用衛浴', '個人書桌、椅子與衣櫃'],
         'gallery' => [
-            ['src' => 'assets/dorm-1-room.webp', 'alt' => 'Dormitory 1 shared room with bunk beds and personal desks'],
-            ['src' => 'assets/dorm-1-bathroom.webp', 'alt' => 'Bathroom facilities in Dormitory 1'],
-            ['src' => 'assets/dorm-1-kitchen.webp', 'alt' => 'Updated shared kitchen in the men’s Dormitory 1'],
+            ['src' => 'assets/dorm-1-room.webp', 'alt' => '一舍共用房間，設有上下舖與個人書桌'],
+            ['src' => 'assets/dorm-1-bathroom.webp', 'alt' => '一舍共用衛浴設備'],
+            ['src' => 'assets/dorm-1-kitchen.webp', 'alt' => '一舍男生宿舍翻新後的共用廚房'],
         ],
     ],
     [
         'number' => '02',
-        'name' => 'Dormitory 2',
-        'type' => 'Standard Quad · Women’s Residence',
-        'description' => 'A women’s residence with shared rooms and communal facilities. Each bed has its own desk, chair, wardrobe, and internet connection.',
-        'detail' => 'Women’s residence · Management Center on 1F',
+        'name' => '二舍',
+        'type' => '四人標準房・女生宿舍',
+        'description' => '二舍為女生宿舍，採多人共住並共用公共設施。每個床位皆配置書桌、椅子、衣櫃與網路連線。',
+        'detail' => '女生宿舍・一樓設有管理中心',
         'class' => 'room-card--single',
         'symbol' => 'beds',
         'cover' => 'assets/dorm-2-room.webp',
-        'coverAlt' => 'Dormitory 2 shared room with bunk beds and built-in desks',
-        'features' => ['Women’s residence', 'Shared bathroom facilities', 'Management Center and package pickup on the first floor'],
+        'coverAlt' => '二舍共用房間，設有上下舖與內建書桌',
+        'features' => ['女生宿舍', '共用衛浴', '管理中心與包裹領取處位於一樓'],
         'gallery' => [
-            ['src' => 'assets/dorm-2-room.webp', 'alt' => 'Dormitory 2 shared room with bunk beds and built-in desks'],
-            ['src' => 'assets/dorm-2-corridor.webp', 'alt' => 'Hallway connecting rooms in Dormitory 2'],
-            ['src' => 'assets/dorm-2-bathroom.webp', 'alt' => 'Bathroom facilities in Dormitory 2'],
-            ['src' => 'assets/dorm-2-kitchen-angle-1.webp', 'alt' => 'Recently updated shared kitchen in Dormitory 2, wide view'],
-            ['src' => 'assets/dorm-2-kitchen-angle-2.webp', 'alt' => 'Recently updated shared kitchen in Dormitory 2, dining area'],
-            ['src' => 'assets/dorm-2-kitchen-angle-4.webp', 'alt' => 'Recently updated shared kitchen in Dormitory 2, counter and windows'],
-            ['src' => 'assets/dorm-2-kitchen-angle-7.webp', 'alt' => 'Recently updated shared kitchen in Dormitory 2, counter and refrigerator'],
+            ['src' => 'assets/dorm-2-room.webp', 'alt' => '二舍共用房間，設有上下舖與內建書桌'],
+            ['src' => 'assets/dorm-2-corridor.webp', 'alt' => '二舍連接各房間的走廊'],
+            ['src' => 'assets/dorm-2-bathroom.webp', 'alt' => '二舍共用衛浴設備'],
+            ['src' => 'assets/dorm-2-kitchen-angle-1.webp', 'alt' => '翻新後的二舍共用廚房全景'],
+            ['src' => 'assets/dorm-2-kitchen-angle-2.webp', 'alt' => '翻新後的二舍共用廚房用餐區'],
+            ['src' => 'assets/dorm-2-kitchen-angle-4.webp', 'alt' => '翻新後的二舍共用廚房流理台與窗戶'],
+            ['src' => 'assets/dorm-2-kitchen-angle-7.webp', 'alt' => '翻新後的二舍共用廚房流理台與冰箱'],
         ],
     ],
     [
         'number' => '03',
-        'name' => 'Dormitory 3A',
-        'type' => 'Private Suite · Higher-cost option',
-        'description' => 'Women’s residence in the shared Dormitory 3 building, separated indoors from 3B by walls. Every room has a private bathroom and balcony; the suite layout is identical to 3B and costs more than Dormitories 1 and 2.',
-        'detail' => 'Women’s residence · Private bathroom and balcony',
+        'name' => '三舍A',
+        'type' => '套房型・費用較高',
+        'description' => '三舍A為女生宿舍，與三舍B位於同一棟建築，室內以隔牆分隔。每間房皆有獨立衛浴與陽台，室內格局與三舍B相同，住宿費高於一舍與二舍。',
+        'detail' => '女生宿舍・每間皆有獨立衛浴與陽台',
         'class' => 'room-card--shared',
         'symbol' => 'door',
         'cover' => 'assets/dorm-3-bedroom.webp',
-        'coverAlt' => 'Shared Dormitory 3 suite bedroom with a raised bed and desk',
-        'features' => ['Women’s residence', 'Private bathroom and balcony in every room', 'Same indoor suite layout as Dormitory 3B', 'Higher-cost than Dormitories 1 and 2'],
+        'coverAlt' => '三舍套房臥室，設有架高床與書桌',
+        'features' => ['女生宿舍', '每間皆有獨立衛浴與陽台', '室內格局與三舍B相同', '住宿費高於一舍與二舍'],
         'gallery' => [
-            ['src' => 'assets/dorm-3-bedroom.webp', 'alt' => 'Shared Dormitory 3 suite bedroom with a raised bed and desk'],
-            ['src' => 'assets/dorm-outside-1.webp', 'alt' => 'Another exterior view of the Dormitory 3 area'],
-            ['src' => 'assets/shared-laundry.webp', 'alt' => 'Shared laundry facilities serving the Dormitory 3 balconies'],
+            ['src' => 'assets/dorm-3-bedroom.webp', 'alt' => '三舍套房臥室，設有架高床與書桌'],
+            ['src' => 'assets/dorm-outside-1.webp', 'alt' => '從另一個角度拍攝的三舍建築外觀'],
+            ['src' => 'assets/shared-laundry.webp', 'alt' => '三舍住戶共用的洗衣設施'],
         ],
     ],
     [
         'number' => '04',
-        'name' => 'Dormitory 3B',
-        'type' => 'Private Suite · Higher-cost option',
-        'description' => 'Men’s residence in the shared Dormitory 3 building, separated indoors from 3A by walls. Every room has a private bathroom and balcony; the suite layout is identical to 3A and costs more than Dormitories 1 and 2.',
-        'detail' => 'Men’s residence · Private bathroom and balcony',
+        'name' => '三舍B',
+        'type' => '套房型・費用較高',
+        'description' => '三舍B為男生宿舍，與三舍A位於同一棟建築，室內以隔牆分隔。每間房皆有獨立衛浴與陽台，室內格局與三舍A相同，住宿費高於一舍與二舍。',
+        'detail' => '男生宿舍・每間皆有獨立衛浴與陽台',
         'class' => 'room-card--shared',
         'symbol' => 'door',
         'cover' => 'assets/dorm-3-bedroom.webp',
-        'coverAlt' => 'Shared Dormitory 3 suite bedroom with a raised bed and desk',
-        'features' => ['Men’s residence', 'Private bathroom and balcony in every room', 'Same indoor suite layout as Dormitory 3A', 'Higher-cost than Dormitories 1 and 2'],
+        'coverAlt' => '三舍套房臥室，設有架高床與書桌',
+        'features' => ['男生宿舍', '每間皆有獨立衛浴與陽台', '室內格局與三舍A相同', '住宿費高於一舍與二舍'],
         'gallery' => [
-            ['src' => 'assets/dorm-3-bedroom.webp', 'alt' => 'Shared Dormitory 3 suite bedroom with a raised bed and desk'],
-            ['src' => 'assets/dorm-3-building.webp', 'alt' => 'Exterior view of the shared Dormitory 3 building'],
-            ['src' => 'assets/shared-laundry.webp', 'alt' => 'Shared laundry facilities serving the Dormitory 3 balconies'],
+            ['src' => 'assets/dorm-3-bedroom.webp', 'alt' => '三舍套房臥室，設有架高床與書桌'],
+            ['src' => 'assets/dorm-3-building.webp', 'alt' => '三舍共用宿舍大樓外觀'],
+            ['src' => 'assets/shared-laundry.webp', 'alt' => '三舍住戶共用的洗衣設施'],
         ],
     ],
     [
         'number' => '05',
-        'name' => 'Jih-Shian Building',
-        'type' => 'Off-Campus Residence',
-        'description' => 'Conveniently located just a short 4-minute walk from campus, offering modern suite living with full facility support.',
-        'detail' => 'Nearby Off-Campus Option',
+        'name' => '濟賢宿舍',
+        'type' => '校外宿舍',
+        'description' => '步行至校園約四分鐘，提供單人或雙人公寓式住宿，並有網路與完整設施支援。',
+        'detail' => '鄰近校園的校外住宿選擇',
         'class' => 'room-card--suite',
         'symbol' => 'window',
         'cover' => 'assets/jih-shian-single.webp',
-        'coverAlt' => 'Single room at the Jih-Shian residence',
-        'features' => ['About four minutes from campus', 'Modern suite living', 'Facility support nearby'],
+        'coverAlt' => '濟賢宿舍的單人房',
+        'features' => ['距離校園步行約四分鐘', '公寓式住宿，可選單人或雙人房', '鄰近生活設施'],
         'gallery' => [
-            ['src' => 'assets/jih-shian-single.webp', 'alt' => 'Single room at the Jih-Shian residence'],
-            ['src' => 'assets/jih-shian-double-a.webp', 'alt' => 'Two-person room at the Jih-Shian residence'],
-            ['src' => 'assets/jih-shian-double-b.webp', 'alt' => 'Another view of a two-person Jih-Shian room'],
+            ['src' => 'assets/jih-shian-single.webp', 'alt' => '濟賢宿舍的單人房'],
+            ['src' => 'assets/jih-shian-double-a.webp', 'alt' => '濟賢宿舍的雙人房'],
+            ['src' => 'assets/jih-shian-double-b.webp', 'alt' => '從另一個角度拍攝的濟賢宿舍雙人房'],
         ],
     ],
 ];
 
 $spaces = [
     [
-        'index' => '01 / EAT & SHOP',
-        'name' => 'Campus Food & Plazas',
-        'text' => 'Located right around the residence blocks with restaurants, convenience stores, cafés, and an ATM network to meet all daily needs.',
+        'index' => '01 / 餐飲購物',
+        'name' => '校園餐飲與商店',
+        'text' => '宿舍周邊設有餐廳、便利商店、咖啡廳與多處提款機，滿足日常所需。',
         'mark' => 'F',
         'tone' => 'space-panel--rose',
         'link' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/su-she-fu-wu/xue-sheng-can-ting',
-        'linkLabel' => 'Campus food court',
+        'linkLabel' => '校園學生餐廳',
         'slides' => [
-            ['image' => 'assets/dorm-1-dining.webp', 'alt' => 'Dining area with tables and chairs at the residence'],
-            ['image' => 'assets/campus-foodcourt-1.webp', 'alt' => 'Dining tables in a campus food court'],
-            ['image' => 'assets/campus-foodcourt-2.webp', 'alt' => 'Indoor view of the campus food court'],
-            ['image' => 'assets/campus-foodcourt-3.webp', 'alt' => 'Another view of the campus food court seating'],
+            ['image' => 'assets/dorm-1-dining.webp', 'alt' => '宿舍餐廳內的桌椅與用餐區'],
+            ['image' => 'assets/campus-foodcourt-1.webp', 'alt' => '校園學生餐廳的用餐桌椅'],
+            ['image' => 'assets/campus-foodcourt-2.webp', 'alt' => '校園學生餐廳室內空間'],
+            ['image' => 'assets/campus-foodcourt-3.webp', 'alt' => '從另一個角度拍攝的校園學生餐廳座位區'],
         ],
     ],
     [
-        'index' => '02 / STUDY',
-        'name' => 'Reading & Social Halls',
-        'text' => 'Quiet student lounges, reading rooms, and comfortable spaces designed for collaborative study or relaxed conversations.',
+        'index' => '02 / 閱讀交流',
+        'name' => '閱讀與交流空間',
+        'text' => '舒適安靜的學生交誼廳與閱覽空間，適合一起討論課業，也適合自在聊天。',
         'mark' => 'S',
         'tone' => 'space-panel--sage',
         'slides' => [
-            ['image' => 'assets/student-lounge-angle-1.webp', 'alt' => 'Student lounge at the Learning Commons with shared tables'],
-            ['image' => 'assets/student-lounge-angle-2.webp', 'alt' => 'Another view of tables and seating in the Learning Commons student lounge'],
-            ['image' => 'assets/student-lounge-angle-3.webp', 'alt' => 'Seating area by the windows in the Learning Commons student lounge'],
-            ['image' => 'assets/student-lounge-angle-4.webp', 'alt' => 'Shared work tables at the Learning Commons student lounge'],
-            ['image' => 'assets/dorm-1-study.webp', 'alt' => 'Study room with desks and chairs in Dormitory 1'],
-            ['image' => 'assets/dorm-2-study-angle-1.webp', 'alt' => 'Study room and desks in Dormitory 2, wide view'],
-            ['image' => 'assets/dorm-2-study-angle-2.webp', 'alt' => 'Study room in Dormitory 2, view of the seating area'],
-            ['image' => 'assets/dorm-2-study-angle-3.webp', 'alt' => 'Study room in Dormitory 2, alternate angle'],
-            ['image' => 'assets/dorm-2-study-angle-4.webp', 'alt' => 'Study room in Dormitory 2, view toward the work tables'],
+            ['image' => 'assets/student-lounge-angle-1.webp', 'alt' => '學習共享空間學生交誼廳，設有共用長桌'],
+            ['image' => 'assets/student-lounge-angle-2.webp', 'alt' => '從另一個角度拍攝的學習共享空間交誼廳桌椅'],
+            ['image' => 'assets/student-lounge-angle-3.webp', 'alt' => '學習共享空間學生交誼廳的窗邊座位'],
+            ['image' => 'assets/student-lounge-angle-4.webp', 'alt' => '學習共享空間學生交誼廳的共用工作桌'],
+            ['image' => 'assets/dorm-1-study.webp', 'alt' => '一舍設有書桌與椅子的自習室'],
+            ['image' => 'assets/dorm-2-study-angle-1.webp', 'alt' => '二舍自習室與書桌全景'],
+            ['image' => 'assets/dorm-2-study-angle-2.webp', 'alt' => '二舍自習室座位區'],
+            ['image' => 'assets/dorm-2-study-angle-3.webp', 'alt' => '從另一個角度拍攝的二舍自習室'],
+            ['image' => 'assets/dorm-2-study-angle-4.webp', 'alt' => '二舍自習室朝向工作桌的視角'],
         ],
     ],
     [
-        'index' => '03 / DAILY LIFE',
-        'name' => 'Shared Kitchens & Laundry',
-        'text' => 'See the updated kitchens in Dormitories 1 and 2, plus shared laundry facilities for dorm residents.',
+        'index' => '03 / 生活日常',
+        'name' => '共用廚房與洗衣設施',
+        'text' => '看看一舍與二舍翻新後的廚房，以及宿舍住戶共用的洗衣設施。',
         'mark' => 'W',
         'tone' => 'space-panel--gold',
         'slides' => [
-            ['image' => 'assets/dorm-2-kitchen-angle-1.webp', 'alt' => 'Updated shared kitchen in Dormitory 2, wide view'],
-            ['image' => 'assets/dorm-2-kitchen-angle-2.webp', 'alt' => 'Updated shared kitchen in Dormitory 2, dining area'],
-            ['image' => 'assets/dorm-2-kitchen-angle-4.webp', 'alt' => 'Updated shared kitchen in Dormitory 2, counter and windows'],
-            ['image' => 'assets/dorm-2-kitchen-angle-6.webp', 'alt' => 'Updated shared kitchen in Dormitory 2, tables and counter'],
-            ['image' => 'assets/dorm-2-kitchen-angle-7.webp', 'alt' => 'Updated shared kitchen in Dormitory 2, counter and refrigerator'],
-            ['image' => 'assets/dorm-2-kitchen-angle-8.webp', 'alt' => 'Updated shared kitchen in Dormitory 2, view toward the dining table'],
-            ['image' => 'assets/dorm-1-kitchen.webp', 'alt' => 'Updated kitchen in the men’s Dormitory 1'],
-            ['image' => 'assets/shared-laundry.webp', 'alt' => 'Shared laundry facilities serving the dorm balconies'],
+            ['image' => 'assets/dorm-2-kitchen-angle-1.webp', 'alt' => '翻新後的二舍共用廚房全景'],
+            ['image' => 'assets/dorm-2-kitchen-angle-2.webp', 'alt' => '翻新後的二舍共用廚房用餐區'],
+            ['image' => 'assets/dorm-2-kitchen-angle-4.webp', 'alt' => '翻新後的二舍共用廚房流理台與窗戶'],
+            ['image' => 'assets/dorm-2-kitchen-angle-6.webp', 'alt' => '翻新後的二舍共用廚房桌椅與流理台'],
+            ['image' => 'assets/dorm-2-kitchen-angle-7.webp', 'alt' => '翻新後的二舍共用廚房流理台與冰箱'],
+            ['image' => 'assets/dorm-2-kitchen-angle-8.webp', 'alt' => '從用餐桌方向拍攝的翻新後二舍共用廚房'],
+            ['image' => 'assets/dorm-1-kitchen.webp', 'alt' => '一舍男生宿舍翻新後的廚房'],
+            ['image' => 'assets/shared-laundry.webp', 'alt' => '宿舍陽台旁的共用洗衣設施'],
         ],
     ],
     [
-        'index' => '04 / FITNESS',
-        'name' => 'Gym & Recreation',
-        'text' => 'A campus gym and indoor pool provide places to exercise, swim, and take a break from study.',
+        'index' => '04 / 運動健身',
+        'name' => '健身與運動',
+        'text' => '校園體育館與室內游泳池提供運動、游泳及課業之餘放鬆的空間。',
         'mark' => 'G',
         'tone' => 'space-panel--blue',
         'link' => 'https://pe.yzu.edu.tw/index.php/zh/',
-        'linkLabel' => 'Campus gym',
+        'linkLabel' => '校園體育館',
         'slides' => [
-            ['image' => 'assets/campus-gym-building.webp', 'alt' => 'Campus gym building beside an outdoor running track'],
-            ['image' => 'assets/campus-gym-interior.webp', 'alt' => 'Exercise machines and weights inside the campus gym'],
-            ['image' => 'assets/campus-pool.webp', 'alt' => 'Indoor swimming pool on campus'],
+            ['image' => 'assets/campus-gym-building.webp', 'alt' => '校園體育館與戶外跑道'],
+            ['image' => 'assets/campus-gym-interior.webp', 'alt' => '校園體育館內的健身器材與重量訓練設備'],
+            ['image' => 'assets/campus-pool.webp', 'alt' => '校園室內游泳池'],
         ],
     ],
     [
-        'index' => '05 / STUDENT SUPPORT',
-        'name' => 'Student Affairs & Packages',
-        'text' => 'Student Affairs offers campus support. Pick up student packages at the Management Center on the first floor of Dormitory 2.',
+        'index' => '05 / 學生服務',
+        'name' => '學生事務處',
+        'text' => '學務處提供各項校園服務，辦公地點鄰近宿舍。',
         'mark' => 'A',
         'tone' => 'space-panel--lilac',
         'link' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/',
-        'linkLabel' => 'Student Affairs',
+        'linkLabel' => '學生事務處',
         'slides' => [
-            ['image' => 'assets/student-affairs-office.webp', 'alt' => 'Student Affairs office area on campus'],
-            ['image' => 'assets/student-affairs-info.webp', 'alt' => 'Student Affairs information and organization display'],
-            ['image' => 'assets/student-affairs-building.webp', 'alt' => 'Student Affairs building on campus'],
+            ['image' => 'assets/student-affairs-office.webp', 'alt' => '校園學務處辦公區'],
+            ['image' => 'assets/student-affairs-info.webp', 'alt' => '學生事務資訊與組織介紹展示'],
+            ['image' => 'assets/student-affairs-building.webp', 'alt' => '校園學務處大樓'],
         ],
     ],
     [
-        'index' => '06 / HEALTH',
-        'name' => 'Medical Services',
-        'text' => 'Medical service is available on the first floor of Dormitory 3.',
+        'index' => '06 / 健康照護',
+        'name' => '醫療服務',
+        'text' => '三舍一樓提供醫療服務。',
         'mark' => 'M',
         'tone' => 'space-panel--teal',
         'link' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/wei-sheng-bao-jian',
-        'linkLabel' => 'Medical services',
+        'linkLabel' => '醫療保健資訊',
         'slides' => [
-            ['image' => 'assets/medical-services-building.webp', 'alt' => 'Exterior entrance to the campus Student Health Center'],
-            ['image' => 'assets/medical-services.webp', 'alt' => 'Medical service room on the first floor of Dormitory 3'],
+            ['image' => 'assets/medical-services-building.webp', 'alt' => '校園健康中心入口外觀'],
+            ['image' => 'assets/medical-services.webp', 'alt' => '三舍一樓的醫療服務空間'],
         ],
     ],
 ];
 
 $officialHousingLinks = [
-    [
-        'label' => 'Student Dorm Association',
+    'association' => [
+        'label' => '學生宿舍自治會',
         'href' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/su-she-fu-wu/2016-07-26-08-55-27',
     ],
-    [
-        'label' => 'Dormitory Housing Application Info',
+    'application_info' => [
+        'label' => '宿舍申請資訊',
         'href' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/component/content/article/798-2016-07-19-03-24-27?Itemid=661',
     ],
-    [
-        'label' => 'Dorm announcement',
+    'announcement' => [
+        'label' => '宿舍公告',
         'href' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/su-she-fu-wu/new',
     ],
-    [
-        'label' => 'Dormitory Introduction',
+    'introduction' => [
+        'label' => '宿舍介紹',
         'href' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/?option=com_sppagebuilder&view=page&id=108',
     ],
+];
+$housingApplicationUrl = 'https://www.yzu.edu.tw/admin/st/index.php/tw/su-she-fu-wu/zhu-su-shen-qing';
+$applicationQuickLinks = [
     [
-        'label' => 'Dorm application',
-        'href' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/su-she-fu-wu/zhu-su-shen-qing',
+        'label' => '宿舍公告',
+        'description' => '查看最新公告與通知。',
+        'href' => $officialHousingLinks['announcement']['href'],
+    ],
+    [
+        'label' => '線上申請住宿',
+        'description' => '前往官方線上住宿申請頁面。',
+        'href' => $housingApplicationUrl,
+    ],
+    [
+        'label' => '宿舍申請資訊',
+        'description' => '查看官方住宿申請說明。',
+        'href' => $officialHousingLinks['application_info']['href'],
     ],
 ];
 
 $dailyMoments = [
-    ['time' => '07:00 AM', 'title' => 'Morning on Campus', 'copy' => 'Grab a quick bite at the campus restaurant plaza and head out for your morning lectures across Yuan Ze.'],
-    ['time' => '02:00 PM', 'title' => 'Between Classes & Labs', 'copy' => 'Return to your room to drop your bag, check notes at your personal desk, or catch up with roommates.'],
-    ['time' => '11:00 PM', 'title' => 'Settling Down', 'copy' => 'Wind down your day in the lounge, wrap up assignments before the nightly network downtime policy ensures a good night’s rest.'],
+    ['time' => '上午 7:00', 'title' => '校園清晨', 'copy' => '到校園餐飲區簡單用餐，再前往元智各處教室開始一天的課程。'],
+    ['time' => '下午 2:00', 'title' => '課堂與實驗之間', 'copy' => '回房間放下背包、在個人書桌整理筆記，或和室友聊聊近況。'],
+    ['time' => '晚上 11:00', 'title' => '準備休息', 'copy' => '在交誼廳放鬆一下，完成作業後準備休息；夜間網路管制也幫助大家維持良好作息。'],
 ];
 
 $guideSteps = [
-    ['step' => '01', 'title' => 'Check the Housing Schedule', 'copy' => 'Monitor the Student Housing Service announcements for spring semester online draws and eligibility rules.'],
-    ['step' => '02', 'title' => 'Submit Your Application', 'copy' => 'Complete your accommodation application online and pay the required deposit through the YZU portal.'],
-    ['step' => '03', 'title' => 'Prepare for Move-In', 'copy' => 'Bring your personal bedding, network cable, and daily necessities to settle into your assigned YZU dorm room.'],
+    ['step' => '01', 'title' => '確認住宿時程', 'copy' => '留意學生宿舍服務組公告，確認春季住宿線上抽籤時間與申請資格。'],
+    ['step' => '02', 'title' => '提交住宿申請', 'copy' => '透過元智官方入口完成住宿申請，並繳交所需保證金。'],
+    ['step' => '03', 'title' => '準備入住', 'copy' => '備妥寢具、網路線與日常用品，準備入住分配到的宿舍房間。'],
 ];
 
 $faqs = [
     [
-        'question' => 'What facilities are provided in each dorm room?',
-        'answer' => 'Each bed includes its own desk, chair, wardrobe, and a private internet connection point. Bring your own bedding, network cable, and power extension cord.',
+        'question' => '每間宿舍房間提供哪些設備？',
+        'answer' => '每個床位皆配置書桌、椅子、衣櫃與個人網路接孔。請自行準備寢具、網路線與延長線。',
     ],
     [
-        'question' => 'Is there a network downtime schedule in the dorms?',
-        'answer' => 'Yes, to ensure student health and rest quality, the dormitory network implements controlled downtime during early morning hours.',
+        'question' => '宿舍網路有夜間管制時段嗎？',
+        'answer' => '有。為維護學生健康與休息品質，宿舍網路於凌晨時段會實施管制。',
     ],
     [
-        'question' => 'Where can I pick up packages and mail?',
-        'answer' => 'Pick up student packages at the Management Center on the first floor of Dormitory 2.',
+        'question' => '包裹和郵件要在哪裡領取？',
+        'answer' => '請至二舍一樓管理中心領取學生包裹。',
     ],
 ];
 
 $studentResources = [
     [
-        'label' => 'Facilities',
-        'title' => 'Residence facilities overview',
-        'description' => 'This Traditional Chinese guide summarizes room equipment, shared facilities inside the halls, and nearby conveniences such as food, shops, mail, and ATMs.',
+        'label' => '宿舍設備',
+        'title' => '宿舍設施一覽',
+        'description' => '整理房間設備、宿舍公共設施，以及附近餐飲、商店、郵件服務與提款機等生活資訊。',
         'image' => 'assets/dorm-features-guide.webp',
-        'alt' => 'Traditional Chinese infographic listing dorm-room equipment, residence facilities, and nearby services.',
+        'alt' => '以繁體中文介紹宿舍房間設備、住宿設施與周邊服務的資訊圖。',
     ],
     [
-        'label' => 'Room planning',
-        'title' => 'Bed and desk dimensions',
-        'description' => 'A visual guide to approximate dimensions for a dorm bed and study area. The source notes that actual room measurements may vary.',
+        'label' => '房間規劃',
+        'title' => '床位與書桌尺寸',
+        'description' => '宿舍床位與讀書空間的約略尺寸圖示。實際房間尺寸可能有所差異。',
         'image' => 'assets/room-dimensions-guide.webp',
-        'alt' => 'Traditional Chinese dorm-room diagram marking approximate bunk-bed, shelf, and desk dimensions.',
+        'alt' => '以繁體中文標示上下舖、層架與書桌約略尺寸的宿舍配置圖。',
     ],
     [
-        'label' => 'Residence rules · 1',
-        'title' => 'Everyday and serious violations',
-        'description' => 'The chart lists 5- and 10-point violations, including noise, shared-space clutter, unauthorized appliances, room cooking, prohibited items, and pets.',
+        'label' => '住宿規定・一',
+        'title' => '一般及重大違規事項',
+        'description' => '圖表列出記點五點與十點的違規事項，包括噪音、公共空間堆放物品、違規電器、室內烹煮、違禁物品及飼養寵物。',
         'image' => 'assets/dorm-rules-1.webp',
-        'alt' => 'Traditional Chinese residence-rules poster describing 5- and 10-point violations.',
+        'alt' => '以繁體中文列出記點五點與十點違規事項的住宿規定海報。',
     ],
     [
-        'label' => 'Residence rules · 2',
-        'title' => 'Major violations and penalties',
-        'description' => 'The chart covers 15- and 25-point violations, including smoking, property damage, unauthorized bed changes or guests, and the consequences shown on the poster.',
+        'label' => '住宿規定・二',
+        'title' => '嚴重違規事項與處分',
+        'description' => '圖表列出記點十五點與二十五點的違規事項，包括吸菸、損壞公物、擅自調換床位或留宿訪客，以及海報所列的相關處分。',
         'image' => 'assets/dorm-rules-2.webp',
-        'alt' => 'Traditional Chinese residence-rules poster describing 15- and 25-point violations and penalties.',
+        'alt' => '以繁體中文列出記點十五點與二十五點違規事項及處分的住宿規定海報。',
     ],
 ];
 
@@ -292,12 +299,12 @@ function e(string $value): string
     return htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
 }
 ?><!doctype html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f0f4f8">
-    <meta name="description" content="<?= e($residence['note']) ?> Learn about rooms, shared spaces, daily life, and housing guidelines at <?= e($residence['school']) ?>.">
+    <meta name="description" content="<?= e($residence['note']) ?> 認識元智大學宿舍房型、公共空間、校園生活與住宿須知。">
     <title><?= e($residence['hall']) ?> — <?= e($residence['school']) ?></title>
     <style>
         :root {
@@ -396,12 +403,47 @@ function e(string $value): string
         .brand-text { display: grid; line-height: 1.15; }
         .brand-text strong { font-family: var(--sans); font-size: 15px; font-weight: 700; color: var(--yzu-blue-deep); }
         .brand-text span { margin-top: 2px; color: var(--ink-soft); font-size: 9px; letter-spacing: .13em; text-transform: uppercase; }
-        .desktop-nav { display: flex; align-items: center; gap: clamp(19px, 2.4vw, 38px); }
+        .desktop-nav { display: flex; align-items: center; gap: clamp(10px, 1.25vw, 18px); }
+        .desktop-nav .nav-link { white-space: nowrap; letter-spacing: .06em; }
         .nav-link { text-decoration: none; transition: color .2s ease; }
         .nav-link:hover { color: var(--yzu-accent); }
         .nav-link--action { padding: 12px 16px; border: 1px solid var(--yzu-blue); color: var(--yzu-blue); }
         .nav-link--action:hover { background: var(--yzu-blue); color: #ffffff; }
         .mobile-menu { display: none; }
+        .mobile-menu summary {
+            display: flex;
+            min-height: 40px;
+            align-items: center;
+            gap: 10px;
+            color: var(--yzu-blue);
+            cursor: pointer;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            list-style: none;
+            text-transform: uppercase;
+        }
+        .mobile-menu summary::-webkit-details-marker { display: none; }
+        .menu-icon { display: grid; width: 19px; gap: 4px; }
+        .menu-icon i { display: block; height: 2px; background: var(--yzu-blue); }
+        .mobile-menu[open] .menu-icon i:first-child { transform: translateY(3px) rotate(45deg); }
+        .mobile-menu[open] .menu-icon i:last-child { transform: translateY(-3px) rotate(-45deg); }
+        .mobile-menu nav {
+            position: absolute;
+            top: 51px;
+            right: -4px;
+            z-index: 30;
+            display: grid;
+            width: min(340px, calc(100vw - 36px));
+            max-height: calc(100vh - 90px);
+            overflow-y: auto;
+            padding: 9px 18px;
+            border: 1px solid var(--line);
+            background: var(--paper);
+            box-shadow: 0 15px 28px rgba(15, 60, 93, .15);
+        }
+        .mobile-menu .nav-link { display: block; padding: 15px 0; border-bottom: 1px solid var(--line); }
+        .mobile-menu .nav-link--action { margin-top: 9px; padding: 12px; border: 1px solid var(--yzu-blue); }
 
         .hero {
             position: relative;
@@ -683,6 +725,7 @@ function e(string $value): string
 
         .housing-section { padding: 101px 0 111px; background: var(--rose-wash); border-top: 1px solid rgba(225,29,72,0.15); border-bottom: 1px solid rgba(225,29,72,0.15); }
         .housing-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(40px, 8vw, 115px); }
+        .housing-lede { position: sticky; top: 35px; align-self: start; }
         .housing-lede h2 { max-width: 490px; margin: 13px 0 22px; font-family: var(--sans); font-size: clamp(38px, 5vw, 58px); font-weight: 700; letter-spacing: -.03em; line-height: 1.05; color: var(--yzu-blue-deep); }
         .housing-lede > p { max-width: 395px; color: var(--ink-soft); font-size: 13px; }
         .guide-notice { display: flex; align-items: flex-start; gap: 12px; max-width: 400px; margin-top: 27px; padding-top: 15px; border-top: 1px solid rgba(15, 60, 93, .2); color: var(--ink-soft); font-size: 11px; }
@@ -692,6 +735,15 @@ function e(string $value): string
         .step-number { padding-top: 6px; color: var(--yzu-accent); font-weight: 700; }
         .guide-step h3 { margin: 0 0 5px; font-family: var(--sans); font-size: 20px; font-weight: 700; color: var(--yzu-blue-deep); }
         .guide-step p { max-width: 490px; margin: 0; color: var(--ink-soft); font-size: 12px; }
+        .housing-resources { margin-top: 27px; }
+        .housing-resources h3 { margin: 0 0 10px; color: var(--yzu-blue-deep); font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+        .housing-resource-list { display: grid; gap: 8px; }
+        .housing-resource-link { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 15px; border: 1px solid rgba(15, 60, 93, .16); background: rgba(255, 255, 255, .58); color: var(--yzu-blue-deep); text-decoration: none; transition: border-color .2s ease, background .2s ease; }
+        .housing-resource-link:hover { border-color: var(--yzu-blue); background: #fff; }
+        .housing-resource-link:focus-visible { outline: 3px solid var(--yzu-accent); outline-offset: 3px; }
+        .housing-resource-link strong { display: block; font-size: 12px; }
+        .housing-resource-link small { display: block; margin-top: 3px; color: var(--ink-soft); font-size: 10px; }
+        .housing-resource-link > span:last-child { flex: 0 0 auto; color: var(--yzu-blue); font-size: 16px; }
         .housing-cta { display: inline-flex; margin-top: 24px; align-items: center; gap: 11px; color: var(--yzu-blue); font-size: 11px; font-weight: 700; letter-spacing: .09em; text-decoration: none; text-transform: uppercase; }
         .housing-cta:hover { text-decoration: underline; text-underline-offset: 4px; }
         .housing-cta span { font-size: 17px; }
@@ -726,15 +778,6 @@ function e(string $value): string
         .resource-content p { margin: 0; color: var(--ink-soft); font-size: 11px; line-height: 1.65; }
         .resource-language { margin-top: 13px !important; padding-top: 11px; border-top: 1px solid var(--line); color: var(--yzu-blue) !important; font-size: 9px !important; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
         .resource-note { max-width: 780px; margin: 22px 0 0; color: var(--ink-soft); font-size: 11px; }
-        .official-links { margin-top: 38px; padding-top: 27px; border-top: 1px solid var(--line); }
-        .official-links-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; margin-bottom: 15px; }
-        .official-links-heading h3 { margin: 0; color: var(--yzu-blue-deep); font-family: var(--sans); font-size: 20px; font-weight: 700; }
-        .official-links-heading p { margin: 0; color: var(--ink-soft); font-size: 11px; }
-        .official-links-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
-        .official-link { display: flex; min-height: 68px; align-items: center; justify-content: space-between; gap: 15px; padding: 15px 17px; border: 1px solid var(--line); background: var(--paper); color: var(--yzu-blue-deep); font-size: 12px; font-weight: 700; line-height: 1.4; text-decoration: none; transition: border-color .2s ease, background .2s ease, transform .2s ease; }
-        .official-link:hover { transform: translateY(-2px); border-color: var(--yzu-blue); background: #ffffff; }
-        .official-link:focus-visible { outline: 3px solid var(--yzu-accent); outline-offset: 3px; }
-        .official-link span:last-child { flex: 0 0 auto; color: var(--yzu-accent); font-size: 16px; }
         .resource-note a, .guide-notice a { color: var(--yzu-blue); font-weight: 700; text-underline-offset: 3px; }
 
         .closing { overflow: hidden; padding: 76px 0 81px; background: var(--paper-deep); border-top: 1px solid var(--line); }
@@ -757,6 +800,10 @@ function e(string $value): string
         .footer-top { grid-column: 2; align-self: end; margin-bottom: 3px; color: var(--paper); font-size: 10px; letter-spacing: .13em; text-decoration: none; text-transform: uppercase; font-weight: 700; white-space: nowrap; }
         .footer-top:hover { color: #93c5fd; }
 
+        @media (max-width: 1120px) {
+            .desktop-nav { display: none; }
+            .mobile-menu { position: relative; display: block; }
+        }
         @media (max-width: 900px) {
             .hero { min-height: auto; padding-top: 35px; }
             .hero-layout { grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -767,7 +814,6 @@ function e(string $value): string
             .room-card p { min-height: 96px; }
             .daily-layout, .housing-layout { gap: 50px; }
             .resource-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-            .official-links-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
         @media (max-width: 680px) {
             :root { --gutter: 22px; }
@@ -807,8 +853,8 @@ function e(string $value): string
                 box-shadow: 0 15px 28px rgba(15, 60, 93, .15);
             }
             .mobile-menu .nav-link { padding: 15px 0; border-bottom: 1px solid var(--line); }
-            .mobile-menu .nav-link:last-child { border-bottom: 0; }
-            .mobile-menu .nav-link--action { padding: 13px 0; border: 0; }
+            .mobile-menu .nav-link:last-child:not(.nav-link--action) { border-bottom: 0; }
+            .mobile-menu .nav-link--action { margin-top: 9px; padding: 12px; border: 1px solid var(--yzu-blue); }
             .hero { padding: 44px 0 43px; }
             .hero::after { top: 48%; right: -29%; width: 112%; height: 55%; clip-path: polygon(27% 0, 100% 0, 100% 100%, 0 100%); }
             .hero-layout { display: flex; flex-direction: column; align-items: stretch; gap: 5px; }
@@ -858,8 +904,6 @@ function e(string $value): string
             .space-panel { min-height: 350px; }
             .spaces-grid .space-panel:first-child { min-height: 350px; }
             .resource-grid { grid-template-columns: 1fr; gap: 14px; }
-            .official-links-heading { align-items: flex-start; flex-direction: column; gap: 7px; }
-            .official-links-grid { grid-template-columns: 1fr; }
             .spaces-tail { font-size: 13px; }
             .daily-layout { grid-template-columns: 1fr; gap: 35px; }
             .daily-heading { position: static; }
@@ -870,6 +914,7 @@ function e(string $value): string
             .moment p { font-size: 12px; }
             .daily-quote { margin-top: 27px; font-size: 16px; }
             .housing-layout { grid-template-columns: 1fr; gap: 38px; }
+            .housing-lede { position: static; }
             .housing-lede h2 { font-size: clamp(34px, 9vw, 50px); }
             .guide-step { grid-template-columns: 39px 1fr; gap: 12px; padding-block: 19px; }
             .guide-step h3 { font-size: 18px; }
@@ -896,32 +941,32 @@ function e(string $value): string
     </style>
 </head>
 <body id="top">
-    <a class="skip-link" href="#main-content">Skip to content</a>
+    <a class="skip-link" href="#main-content">跳至主要內容</a>
     <header class="site-header">
         <div class="wrap header-inner">
-            <a class="brand" href="#top" aria-label="<?= e($residence['hall']) ?> home">
+            <a class="brand" href="#top" aria-label="<?= e($residence['hall']) ?>首頁">
                 <img class="brand-logo" src="assets/yzu-logo.webp" alt="" aria-hidden="true" width="48" height="48">
                 <span class="brand-text">
                     <strong><?= e($residence['hall']) ?></strong>
                     <span><?= e($residence['school']) ?></span>
                 </span>
             </a>
-            <nav class="desktop-nav" aria-label="Main navigation">
-                <?php foreach ($navItems as $item): ?>
-                    <a class="nav-link" href="<?= e($item['href']) ?>"><?= e($item['label']) ?></a>
+            <nav class="desktop-nav" aria-label="宿舍官方連結">
+                <?php foreach ($officialHousingLinks as $item): ?>
+                    <a class="nav-link" href="<?= e($item['href']) ?>" target="_blank" rel="noopener noreferrer"><?= e($item['label']) ?></a>
                 <?php endforeach; ?>
-                <a class="nav-link nav-link--action" href="#housing-guide">Housing Portal</a>
+                <a class="nav-link nav-link--action" href="<?= e($housingApplicationUrl) ?>" target="_blank" rel="noopener noreferrer">住宿申請入口</a>
             </nav>
             <details class="mobile-menu">
-                <summary aria-label="Open navigation menu">
+                <summary aria-label="開啟宿舍官方連結選單">
                     <span class="menu-icon" aria-hidden="true"><i></i><i></i></span>
-                    Menu
+                    連結
                 </summary>
-                <nav aria-label="Mobile navigation">
-                    <?php foreach ($navItems as $item): ?>
-                        <a class="nav-link" href="<?= e($item['href']) ?>"><?= e($item['label']) ?></a>
+                <nav aria-label="宿舍官方連結">
+                    <?php foreach ($officialHousingLinks as $item): ?>
+                        <a class="nav-link" href="<?= e($item['href']) ?>" target="_blank" rel="noopener noreferrer"><?= e($item['label']) ?></a>
                     <?php endforeach; ?>
-                    <a class="nav-link nav-link--action" href="#housing-guide">Housing Portal</a>
+                    <a class="nav-link nav-link--action" href="<?= e($housingApplicationUrl) ?>" target="_blank" rel="noopener noreferrer">住宿申請入口</a>
                 </nav>
             </details>
         </div>
@@ -932,43 +977,43 @@ function e(string $value): string
             <div class="wrap hero-layout">
                 <div class="hero-copy">
                     <div class="eyebrow"><?= e($residence['eyebrow']) ?></div>
-                    <h1 id="hero-title">Home away<br>from <em>home.</em></h1>
+                    <h1 id="hero-title">在校園裡<br><em>自在如家。</em></h1>
                     <p class="hero-intro"><?= e($residence['intro']) ?></p>
                     <div class="hero-actions">
-                        <a class="button" href="#rooms">Explore YZU Dorms <span class="button-arrow" aria-hidden="true">↘</span></a>
-                        <a class="text-link" href="#daily-life">Dormitory living & learning <span aria-hidden="true">→</span></a>
+                        <a class="button" href="#rooms">探索元智宿舍 <span class="button-arrow" aria-hidden="true">↘</span></a>
+                        <a class="text-link" href="#daily-life">宿舍生活與學習 <span aria-hidden="true">→</span></a>
                     </div>
                     <div class="hero-note"><?= e($residence['note']) ?></div>
                 </div>
                 <div class="hero-art">
-                    <span class="hero-stamp" aria-hidden="true">YZU<br>Dormitory</span>
-                    <img class="hero-photo" src="assets/dorm-exterior.webp" alt="Exterior courtyard view of Yuan Ze University student residences" fetchpriority="high" decoding="async">
+                    <span class="hero-stamp" aria-hidden="true">元智<br>宿舍</span>
+                    <img class="hero-photo" src="assets/dorm-exterior.webp" alt="元智大學學生宿舍中庭外觀" fetchpriority="high" decoding="async">
                     <div class="hero-caption">
                         <strong><?= e($residence['hall']) ?></strong>
-                        <span><?= e($residence['school']) ?> · Taoyuan City</span>
+                        <span><?= e($residence['school']) ?>・桃園市</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <div class="ribbon" aria-label="Dormitory Highlights">
+        <div class="ribbon" aria-label="宿舍生活亮點">
             <div class="wrap ribbon-inner">
-                <div class="ribbon-item"><span class="ribbon-mark">01</span> Dining & Plazas on Site</div>
+                <div class="ribbon-item"><span class="ribbon-mark">01</span> 鄰近餐飲與商店</div>
                 <span class="ribbon-divider" aria-hidden="true"></span>
-                <div class="ribbon-item"><span class="ribbon-mark">02</span> Study & Social Spaces</div>
+                <div class="ribbon-item"><span class="ribbon-mark">02</span> 閱讀與交流空間</div>
                 <span class="ribbon-divider" aria-hidden="true"></span>
-                <div class="ribbon-item"><span class="ribbon-mark">03</span> Cozy Coexistence Community</div>
+                <div class="ribbon-item"><span class="ribbon-mark">03</span> 溫暖共居的宿舍社群</div>
             </div>
         </div>
 
         <section class="intro-section" aria-labelledby="intro-title">
             <div class="wrap intro-grid">
-                <div class="section-kicker eyebrow">Student Housing Service</div>
+                <div class="section-kicker eyebrow">學生宿舍服務組</div>
                 <div class="intro-copy">
-                    <h2 id="intro-title">Creating a living space where you grow and <em>feel at home.</em></h2>
+                    <h2 id="intro-title">打造讓你成長、<em>自在如家的生活空間。</em></h2>
                     <div class="intro-bottom">
-                        <p>Our goal is to build a diverse and convenient living space, providing everything you need so your student dormitories become cherished memories of your extended family at Yuan Ze.</p>
-                        <div class="scribble" aria-hidden="true">YZU Campus Living</div>
+                        <p>我們致力打造多元便利的住宿環境，提供校園生活所需，讓宿舍成為你在元智珍藏的家與回憶。</p>
+                        <div class="scribble" aria-hidden="true">元智校園生活</div>
                     </div>
                 </div>
             </div>
@@ -978,10 +1023,10 @@ function e(string $value): string
             <div class="wrap">
                 <div class="section-heading">
                     <div>
-                        <div class="eyebrow section-kicker">Accommodation Options</div>
-                        <h2 id="rooms-title">Choose your<br>living space.</h2>
+                        <div class="eyebrow section-kicker">住宿選擇</div>
+                        <h2 id="rooms-title">選擇你的<br>生活空間。</h2>
                     </div>
-                    <p>From campus residence halls for freshmen and international students to modern suite options for senior students.</p>
+                    <p>從適合新生與國際學生的校內宿舍，到現代化套房型住宿，依照需求選擇合適的生活空間。</p>
                 </div>
                 <div class="room-grid<?= count($roomTypes) === 5 ? ' room-grid--five' : '' ?>">
                     <?php foreach ($roomTypes as $index => $room): ?>
@@ -991,7 +1036,7 @@ function e(string $value): string
                                 <?php if (!empty($room['cover'])): ?>
                                     <img class="room-photo" src="<?= e($room['cover']) ?>" alt="<?= e($room['coverAlt']) ?>" loading="lazy" decoding="async">
                                 <?php elseif ($room['symbol'] === 'beds'): ?>
-                                    <svg class="room-graphic" viewBox="0 0 420 250" role="img" aria-label="Illustration of a standard quad dorm room">
+                                    <svg class="room-graphic" viewBox="0 0 420 250" role="img" aria-label="四人標準宿舍房間示意圖">
                                         <rect width="420" height="250" fill="#e2e8f0"/>
                                         <path d="M0 193h420v57H0Z" fill="#cbd5e1"/>
                                         <rect x="80" y="60" width="100" height="110" fill="#ffffff" stroke="#0f3c5d" stroke-width="3"/>
@@ -1000,7 +1045,7 @@ function e(string $value): string
                                         <path d="M260 80h60v20h-60z" fill="#3b82f6"/>
                                     </svg>
                                 <?php elseif ($room['symbol'] === 'door'): ?>
-                                    <svg class="room-graphic" viewBox="0 0 420 250" role="img" aria-label="Illustration of a suite-style room">
+                                    <svg class="room-graphic" viewBox="0 0 420 250" role="img" aria-label="套房型房間示意圖">
                                         <rect width="420" height="250" fill="#cbd5e1"/>
                                         <path d="M0 193h420v57H0Z" fill="#94a3b8"/>
                                         <rect x="110" y="40" width="200" height="160" fill="#f8fafc" stroke="#0f3c5d" stroke-width="4"/>
@@ -1008,14 +1053,14 @@ function e(string $value): string
                                         <circle cx="270" cy="120" r="6" fill="#2563eb"/>
                                     </svg>
                                 <?php else: ?>
-                                    <svg class="room-graphic" viewBox="0 0 420 250" role="img" aria-label="Illustration of off-campus housing">
+                                    <svg class="room-graphic" viewBox="0 0 420 250" role="img" aria-label="校外住宿示意圖">
                                         <rect width="420" height="250" fill="#e2e8f0"/>
                                         <path d="M0 193h420v57H0Z" fill="#cbd5e1"/>
                                         <path d="M120 70l90-40 90 40v130H120z" fill="#ffffff" stroke="#0f3c5d" stroke-width="4"/>
                                         <rect x="160" y="100" width="100" height="80" fill="#93c5fd" opacity=".6"/>
                                     </svg>
                                 <?php endif; ?>
-                                <span class="room-card-view" aria-hidden="true">View details <span>↗</span></span>
+                                <span class="room-card-view" aria-hidden="true">查看詳情 <span>↗</span></span>
                             </div>
                             <div class="room-card-content">
                                 <div class="room-card-top">
@@ -1025,35 +1070,35 @@ function e(string $value): string
                                 <p><?= e($room['description']) ?></p>
                                 <div class="room-meta"><?= e($room['detail']) ?></div>
                             </div>
-                            <button class="room-card-open" type="button" aria-label="View photos and details for <?= e($room['name']) ?>" aria-haspopup="dialog" aria-controls="room-dialog" data-room-index="<?= (int) $index ?>"></button>
+                            <button class="room-card-open" type="button" aria-label="查看<?= e($room['name']) ?>照片與住宿資訊" aria-haspopup="dialog" aria-controls="room-dialog" data-room-index="<?= (int) $index ?>"></button>
                         </article>
                     <?php endforeach; ?>
                 </div>
-                <p class="rooms-footnote"><span>Note</span> Dormitories 1 and 2 have shared bathrooms and no private balcony. Dormitories 3A and 3B are higher-cost suites with a private bathroom and balcony in every room.</p>
+                <p class="rooms-footnote"><span>注意</span> 一舍與二舍為共用衛浴，且沒有獨立陽台；三舍A與三舍B為費用較高的套房型住宿，每間皆有獨立衛浴與陽台。</p>
             </div>
         </section>
 
         <dialog class="room-dialog" id="room-dialog" aria-labelledby="room-dialog-title" aria-describedby="room-dialog-description">
             <div class="room-dialog-shell">
-                <button class="room-dialog-close" type="button" aria-label="Close room details">×</button>
+                <button class="room-dialog-close" type="button" aria-label="關閉房型資訊">×</button>
                 <div class="room-dialog-gallery">
-                    <div class="room-dialog-image-window" role="group" aria-roledescription="carousel" aria-label="Room photos">
+                    <div class="room-dialog-image-window" role="group" aria-roledescription="照片輪播" aria-label="房間照片">
                         <div class="room-dialog-track" id="room-dialog-track"></div>
                     </div>
-                    <button class="room-dialog-arrow room-dialog-arrow--prev" type="button" data-gallery-step="-1" aria-label="Previous photo">‹</button>
-                    <button class="room-dialog-arrow room-dialog-arrow--next" type="button" data-gallery-step="1" aria-label="Next photo">›</button>
+                    <button class="room-dialog-arrow room-dialog-arrow--prev" type="button" data-gallery-step="-1" aria-label="上一張照片">‹</button>
+                    <button class="room-dialog-arrow room-dialog-arrow--next" type="button" data-gallery-step="1" aria-label="下一張照片">›</button>
                     <div class="room-dialog-gallery-bottom">
-                        <div class="room-dialog-dots" aria-label="Choose a photo"></div>
+                        <div class="room-dialog-dots" aria-label="選擇照片"></div>
                         <span class="room-dialog-count" aria-live="polite" aria-atomic="true"></span>
                     </div>
                 </div>
                 <div class="room-dialog-copy">
-                    <p class="room-dialog-kicker">Residence overview</p>
+                    <p class="room-dialog-kicker">宿舍簡介</p>
                     <h2 class="room-dialog-title" id="room-dialog-title"></h2>
                     <p class="room-dialog-type"></p>
                     <p class="room-dialog-description" id="room-dialog-description"></p>
                     <ul class="room-dialog-highlights"></ul>
-                    <p class="room-dialog-note">Confirm room assignments, fees, and availability with the official YZU Student Housing Service.</p>
+                    <p class="room-dialog-note">房間分配、住宿費用與空房狀況，請向元智大學學生宿舍服務組確認。</p>
                 </div>
             </div>
         </dialog>
@@ -1062,42 +1107,28 @@ function e(string $value): string
             <div class="wrap">
                 <div class="section-heading">
                     <div>
-                        <div class="eyebrow section-kicker">New Resident Essentials</div>
-                        <h2 id="student-essentials-title">Plan for dorm life.</h2>
+                        <div class="eyebrow section-kicker">新生住宿指南</div>
+                        <h2 id="student-essentials-title">入住前，先做好準備。</h2>
                     </div>
-                    <p>Practical guides to dorm facilities, room dimensions, and residence rules. Open any poster to view it full size.</p>
+                    <p>宿舍設施、房間尺寸與住宿規定實用指南。點選海報即可開啟大圖。</p>
                 </div>
                 <div class="resource-grid">
                     <?php foreach ($studentResources as $resource): ?>
                         <article class="resource-card">
-                            <a class="resource-image" href="<?= e($resource['image']) ?>" target="_blank" rel="noopener" aria-label="Open <?= e($resource['title']) ?> poster in a new tab">
+                            <a class="resource-image" href="<?= e($resource['image']) ?>" target="_blank" rel="noopener" aria-label="在新分頁開啟「<?= e($resource['title']) ?>」海報">
                                 <img src="<?= e($resource['image']) ?>" alt="<?= e($resource['alt']) ?>" loading="lazy" decoding="async">
-                                <span class="resource-open" aria-hidden="true">Open poster ↗</span>
+                                <span class="resource-open" aria-hidden="true">開啟海報 ↗</span>
                             </a>
                             <div class="resource-content">
                                 <span class="resource-label"><?= e($resource['label']) ?></span>
                                 <h3><?= e($resource['title']) ?></h3>
                                 <p><?= e($resource['description']) ?></p>
-                                <p class="resource-language">Original guide · Traditional Chinese</p>
+                                <p class="resource-language">原始指南・繁體中文</p>
                             </div>
                         </article>
                     <?php endforeach; ?>
                 </div>
-                <p class="resource-note">These source guides are in Traditional Chinese. The English summaries are for orientation; confirm current policies, application dates, and room details with the YZU Student Housing Service. Room measurements are approximate.</p>
-                <div class="official-links">
-                    <div class="official-links-heading">
-                        <h3 id="official-links-title">Official Dormitory Links</h3>
-                        <p>Applications, announcements, and student housing information from YZU.</p>
-                    </div>
-                    <nav class="official-links-grid" aria-labelledby="official-links-title">
-                        <?php foreach ($officialHousingLinks as $link): ?>
-                            <a class="official-link" href="<?= e($link['href']) ?>" target="_blank" rel="noopener noreferrer">
-                                <span><?= e($link['label']) ?></span>
-                                <span aria-hidden="true">↗</span>
-                            </a>
-                        <?php endforeach; ?>
-                    </nav>
-                </div>
+                <p class="resource-note">本區海報原文為繁體中文；住宿規定、申請日期與房間資訊，請以元智大學學生宿舍服務組公告為準。房間尺寸為約略值。</p>
             </div>
         </section>
 
@@ -1105,15 +1136,15 @@ function e(string $value): string
             <div class="wrap">
                 <div class="section-heading">
                     <div>
-                        <div class="eyebrow section-kicker">Living & Learning Facilities</div>
-                        <h2 id="spaces-title">Everything you need,<br>right on campus.</h2>
+                        <div class="eyebrow section-kicker">生活與學習設施</div>
+                        <h2 id="spaces-title">校園所需，<br>就在身邊。</h2>
                     </div>
-                    <p>Explore the dining, study, fitness, health, and student-support spaces available around campus.</p>
+                    <p>探索校園周邊的餐飲、自習、運動、健康照護與學生服務空間。</p>
                 </div>
                 <div class="spaces-grid">
                     <?php foreach ($spaces as $space): ?>
                         <article class="space-panel <?= e($space['tone']) ?>">
-                            <div class="space-media"<?= count($space['slides']) > 1 ? ' data-space-slideshow role="group" aria-roledescription="carousel" aria-label="' . e($space['name']) . ' photos"' : '' ?>>
+                            <div class="space-media"<?= count($space['slides']) > 1 ? ' data-space-slideshow role="group" aria-roledescription="照片輪播" aria-label="' . e($space['name']) . '照片"' : '' ?>>
                                 <?php foreach ($space['slides'] as $slideIndex => $slide): ?>
                                     <figure class="space-slide<?= $slideIndex === 0 ? ' is-active' : '' ?>" aria-hidden="<?= $slideIndex === 0 ? 'false' : 'true' ?>">
                                         <img class="space-photo" src="<?= e($slide['image']) ?>" alt="<?= e($slide['alt']) ?>" loading="lazy" decoding="async">
@@ -1121,10 +1152,10 @@ function e(string $value): string
                                 <?php endforeach; ?>
                                 <?php if (count($space['slides']) > 1): ?>
                                     <div class="space-slideshow-controls" hidden>
-                                        <button type="button" data-space-previous aria-label="Previous image">‹</button>
-                                        <button type="button" data-space-toggle aria-label="Pause automatic slideshow" aria-pressed="true">Ⅱ</button>
+                                        <button type="button" data-space-previous aria-label="上一張照片">‹</button>
+                                        <button type="button" data-space-toggle aria-label="暫停自動輪播" aria-pressed="true">Ⅱ</button>
                                         <span class="space-slide-count">1 / <?= count($space['slides']) ?></span>
-                                        <button type="button" data-space-next aria-label="Next image">›</button>
+                                        <button type="button" data-space-next aria-label="下一張照片">›</button>
                                     </div>
                                 <?php endif; ?>
                             </div>
@@ -1142,17 +1173,17 @@ function e(string $value): string
                         </article>
                     <?php endforeach; ?>
                 </div>
-                <div class="spaces-tail">Convenient living spaces designed for your student success.</div>
+                <div class="spaces-tail">便利的生活空間，陪伴你在校園中成長。</div>
             </div>
         </section>
 
         <section class="daily-section" id="daily-life" aria-labelledby="daily-title">
             <div class="wrap daily-layout">
                 <div class="daily-heading">
-                    <div class="eyebrow section-kicker">Daily Rhythm</div>
-                    <h2 id="daily-title">A day in the life at YZU dorms.</h2>
-                    <p>Balanced routines combining academic focus, convenient amenities, and evening relaxation.</p>
-                    <blockquote class="daily-quote">“A cherished place where you will always look back on with fond memories.”</blockquote>
+                    <div class="eyebrow section-kicker">宿舍日常</div>
+                    <h2 id="daily-title">元智宿舍的一天。</h2>
+                    <p>在專注學習、便利生活與夜晚放鬆之間，找到自在平衡的日常。</p>
+                    <blockquote class="daily-quote">「這裡是承載青春回憶的家，未來想起時，依然令人珍惜。」</blockquote>
                 </div>
                 <div class="moments">
                     <?php foreach ($dailyMoments as $moment): ?>
@@ -1171,10 +1202,10 @@ function e(string $value): string
         <section class="housing-section" id="housing-guide" aria-labelledby="housing-title">
             <div class="wrap housing-layout">
                 <div class="housing-lede">
-                    <div class="eyebrow section-kicker">Accommodation Guide</div>
-                    <h2 id="housing-title">Your application<br>next steps.</h2>
-                    <p>Follow the official procedures managed by the Student Housing Service Section to secure your room.</p>
-                <div class="guide-notice"><span aria-hidden="true">i</span><div><?= e($residence['note']) ?> Check official YZU announcements for exact application periods. <a href="#student-essentials">See facilities, room dimensions, and residence rules.</a></div></div>
+                    <div class="eyebrow section-kicker">住宿申請指南</div>
+                    <h2 id="housing-title">住宿申請<br>接下來這樣做。</h2>
+                    <p>依照學生宿舍服務組公告的正式程序辦理，為自己安排合適的住宿。</p>
+                <div class="guide-notice"><span aria-hidden="true">i</span><div><?= e($residence['note']) ?> 申請期間請以元智官方公告為準。<a href="#student-essentials">查看宿舍設施、房間尺寸與住宿規定。</a></div></div>
                 </div>
                 <div>
                     <div class="steps">
@@ -1188,7 +1219,18 @@ function e(string $value): string
                             </article>
                         <?php endforeach; ?>
                     </div>
-                    <a class="housing-cta" href="#questions">View Housing FAQs <span aria-hidden="true">↓</span></a>
+                    <nav class="housing-resources" aria-label="住宿申請官方連結">
+                        <h3>住宿官方連結</h3>
+                        <div class="housing-resource-list">
+                            <?php foreach ($applicationQuickLinks as $link): ?>
+                                <a class="housing-resource-link" href="<?= e($link['href']) ?>" target="_blank" rel="noopener noreferrer">
+                                    <span><strong><?= e($link['label']) ?></strong><small><?= e($link['description']) ?></small></span>
+                                    <span aria-hidden="true">↗</span>
+                                </a>
+                            <?php endforeach; ?>
+                        </div>
+                    </nav>
+                    <a class="housing-cta" href="#questions">查看住宿常見問題 <span aria-hidden="true">↓</span></a>
                 </div>
             </div>
         </section>
@@ -1196,11 +1238,11 @@ function e(string $value): string
         <section class="faq-section" id="questions" aria-labelledby="faq-title">
             <div class="wrap faq-layout">
                 <div class="faq-title">
-                    <div class="eyebrow section-kicker">Helpful Answers</div>
-                    <h2 id="faq-title">Frequently asked questions.</h2>
-                    <p>Everything you need to know about living in Yuan Ze University student housing.</p>
+                    <div class="eyebrow section-kicker">常見解答</div>
+                    <h2 id="faq-title">住宿常見問題。</h2>
+                    <p>關於元智大學學生宿舍生活，你需要知道的資訊都在這裡。</p>
                     <a class="faq-official-link" href="https://www.yzu.edu.tw/admin/st/index.php/tw/su-she-fu-wu/2016-07-19-01-33-33" target="_blank" rel="noopener noreferrer">
-                        Dorm Q &amp; A <span aria-hidden="true">↗</span>
+                        宿舍問答 <span aria-hidden="true">↗</span>
                     </a>
                 </div>
                 <div class="faq-list">
@@ -1214,13 +1256,13 @@ function e(string $value): string
             </div>
         </section>
 
-        <section class="closing" aria-label="Closing note">
+        <section class="closing" aria-label="結語">
             <div class="wrap closing-inner">
                 <div class="closing-copy">
-                    <div class="eyebrow">Yuan Ze University</div>
-                    <h2>Join our community.<br>Your campus home awaits.</h2>
+                    <div class="eyebrow">元智大學</div>
+                    <h2>加入我們的宿舍社群。<br>你的校園之家，等你入住。</h2>
                 </div>
-                <img class="closing-logo" src="assets/yzu-logo.webp" alt="Yuan Ze University logo" width="112" height="112">
+                <img class="closing-logo" src="assets/yzu-logo.webp" alt="元智大學校徽" width="112" height="112">
             </div>
         </section>
     </main>
@@ -1229,15 +1271,15 @@ function e(string $value): string
         <div class="wrap footer-inner">
             <div class="footer-brand">
                 <img class="footer-brand-logo" src="assets/yzu-logo.webp" alt="" aria-hidden="true" width="46" height="46">
-                <strong>STUDENT HOUSING SERVICE SECTION</strong>
+                <strong>元智大學學生宿舍服務組</strong>
             </div>
             <section class="footer-contact" aria-labelledby="footer-contact-title">
-                <h2 class="footer-contact-title" id="footer-contact-title">Contact Student Housing Service</h2>
-                <p class="footer-contact-hotline"><strong>Service Hotline:</strong> <a href="tel:034639900">03-4639900</a> Ext.➤➤➤</p>
-                <p>Counseling: 2880, 2868 │ Maintenance: 2865 │ Bed Allocation: 2867 │ Student Cafeteria: 2869 │</p>
-                <p>Male Dorm Counter: 2881 │ Female Dorm Counter: 2882 │ Dormitory Office (24hrs): <a href="tel:0903032011">0903032011</a></p>
+                <h2 class="footer-contact-title" id="footer-contact-title">聯絡學生宿舍服務組</h2>
+                <p class="footer-contact-hotline"><strong>服務專線：</strong> <a href="tel:034639900">03-4639900</a> 分機 ➤➤➤</p>
+                <p>諮詢：2880、2868 │ 維修：2865 │ 床位分配：2867 │ 學生餐廳：2869 │</p>
+                <p>男生宿舍櫃檯：2881 │ 女生宿舍櫃檯：2882 │ 宿舍辦公室（24小時）：<a href="tel:0903032011">0903032011</a></p>
             </section>
-            <a class="footer-top" href="#top">Back to top ↑</a>
+            <a class="footer-top" href="#top">回到頁首 ↑</a>
         </div>
     </footer>
     <script>
@@ -1268,7 +1310,7 @@ function e(string $value): string
                 dots.querySelectorAll('.room-dialog-dot').forEach((dot, index) => {
                     dot.setAttribute('aria-current', String(index === activeSlide));
                 });
-                count.textContent = `Photo ${activeSlide + 1} of ${activeRoom.gallery.length}`;
+                count.textContent = `第 ${activeSlide + 1} 張／共 ${activeRoom.gallery.length} 張照片`;
             };
 
             const openRoom = (room, trigger) => {
@@ -1302,7 +1344,7 @@ function e(string $value): string
                     const dot = document.createElement('button');
                     dot.className = 'room-dialog-dot';
                     dot.type = 'button';
-                    dot.setAttribute('aria-label', `Show photo ${index + 1} of ${room.gallery.length}`);
+                    dot.setAttribute('aria-label', `顯示第 ${index + 1} 張照片，共 ${room.gallery.length} 張`);
                     dot.addEventListener('click', () => showSlide(index));
                     dots.append(dot);
                 });
@@ -1379,7 +1421,7 @@ function e(string $value): string
                 toggleButton.addEventListener('click', () => {
                     automatic = !automatic;
                     toggleButton.setAttribute('aria-pressed', String(automatic));
-                    toggleButton.setAttribute('aria-label', automatic ? 'Pause automatic slideshow' : 'Play automatic slideshow');
+                    toggleButton.setAttribute('aria-label', automatic ? '暫停自動輪播' : '繼續自動輪播');
                     toggleButton.textContent = automatic ? 'Ⅱ' : '▶';
                     updateTimer();
                 });
