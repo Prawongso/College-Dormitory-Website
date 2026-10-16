@@ -200,30 +200,21 @@ $spaces = [
 ];
 
 $officialHousingLinks = [
-    'association' => [
-        'label' => '學生宿舍自治會',
-        'href' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/su-she-fu-wu/2016-07-26-08-55-27',
+    'introduction' => [
+        'label' => '宿舍介紹',
+        'href' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/?option=com_sppagebuilder&view=page&id=108',
     ],
     'application_info' => [
         'label' => '宿舍申請資訊',
         'href' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/component/content/article/798-2016-07-19-03-24-27?Itemid=661',
     ],
-    'announcement' => [
-        'label' => '宿舍公告',
-        'href' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/su-she-fu-wu/new',
-    ],
-    'introduction' => [
-        'label' => '宿舍介紹',
-        'href' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/?option=com_sppagebuilder&view=page&id=108',
+    'association' => [
+        'label' => '學生宿舍自治會',
+        'href' => 'https://www.yzu.edu.tw/admin/st/index.php/tw/su-she-fu-wu/2016-07-26-08-55-27',
     ],
 ];
 $housingApplicationUrl = 'https://www.yzu.edu.tw/admin/st/index.php/tw/su-she-fu-wu/zhu-su-shen-qing';
 $applicationQuickLinks = [
-    [
-        'label' => '宿舍公告',
-        'description' => '查看最新公告與通知。',
-        'href' => $officialHousingLinks['announcement']['href'],
-    ],
     [
         'label' => '線上申請住宿',
         'description' => '前往官方線上住宿申請頁面。',
@@ -567,24 +558,16 @@ function e(string $value): string
         .ribbon-mark { color: #93c5fd; font-family: var(--sans); font-weight: 800; font-size: 14px; }
         .ribbon-divider { width: 1px; height: 20px; background: rgba(255, 255, 255, .27); }
 
-        .intro-section { padding: clamp(82px, 10vw, 145px) 0 clamp(86px, 10vw, 138px); }
-        .intro-grid { display: grid; grid-template-columns: .36fr 1fr; gap: clamp(30px, 9vw, 135px); align-items: start; }
         .section-kicker { display: flex; align-items: center; gap: 11px; color: var(--yzu-accent); }
         .section-kicker::before { width: 25px; height: 1px; background: currentColor; content: ""; }
-        .intro-copy h2 {
-            max-width: 840px;
-            margin: 0;
-            font-family: var(--sans);
-            font-size: clamp(32px, 4.5vw, 56px);
-            font-weight: 700;
-            letter-spacing: -.03em;
-            line-height: 1.15;
-            color: var(--yzu-blue-deep);
-        }
-        .intro-copy h2 em { color: var(--yzu-accent); font-style: normal; }
-        .intro-bottom { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-top: 33px; }
-        .intro-bottom p { max-width: 455px; margin: 0; color: var(--ink-soft); font-size: 14px; }
-        .scribble { min-width: 130px; color: var(--yzu-blue); font-family: var(--sans); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; }
+        .announcement-placeholder { min-height: clamp(190px, 22vw, 290px); border-block: 1px solid var(--line); background: var(--paper); }
+        .maintenance-section { padding: 98px 0 108px; background: var(--paper-tint); }
+        .maintenance-guide-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+        .maintenance-guide-card { display: block; overflow: hidden; border: 1px solid var(--line); background: #ffffff; text-decoration: none; }
+        .maintenance-guide-card img { display: block; width: 100%; aspect-ratio: 2000 / 887; object-fit: contain; transition: transform .3s ease; }
+        .maintenance-guide-card:hover img { transform: scale(1.025); }
+        .maintenance-guide-card span { display: flex; justify-content: space-between; gap: 12px; padding: 15px 17px; border-top: 1px solid var(--line); color: var(--yzu-blue-deep); font-size: 12px; font-weight: 700; }
+        .maintenance-guide-card span::after { color: var(--yzu-accent); content: "↗"; }
 
         .rooms-section { padding: 95px 0 106px; background: var(--paper-deep); }
         .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 43px; }
@@ -871,11 +854,9 @@ function e(string $value): string
             .ribbon-inner::-webkit-scrollbar { display: none; }
             .ribbon-item { flex: 0 0 auto; font-size: 9px; }
             .ribbon-divider { flex: 0 0 1px; }
-            .intro-section { padding: 77px 0 81px; }
-            .intro-grid { grid-template-columns: 1fr; gap: 24px; }
-            .intro-copy h2 { font-size: clamp(28px, 8vw, 42px); }
-            .intro-bottom { align-items: start; flex-direction: column; gap: 20px; margin-top: 22px; }
-            .scribble { align-self: flex-end; }
+            .announcement-placeholder { min-height: 180px; }
+            .maintenance-section { padding: 74px 0 82px; }
+            .maintenance-guide-grid { grid-template-columns: 1fr; gap: 14px; }
             .rooms-section, .spaces-section, .daily-section, .housing-section, .faq-section, .student-essentials { padding: 76px 0 82px; }
             .section-heading { align-items: start; flex-direction: column; gap: 17px; margin-bottom: 29px; }
             .section-heading h2 { font-size: clamp(32px, 9vw, 48px); }
@@ -955,7 +936,7 @@ function e(string $value): string
                 <?php foreach ($officialHousingLinks as $item): ?>
                     <a class="nav-link" href="<?= e($item['href']) ?>" target="_blank" rel="noopener noreferrer"><?= e($item['label']) ?></a>
                 <?php endforeach; ?>
-                <a class="nav-link nav-link--action" href="<?= e($housingApplicationUrl) ?>" target="_blank" rel="noopener noreferrer">住宿申請入口</a>
+                <a class="nav-link nav-link--action" href="#maintenance-guides">宿舍報修</a>
             </nav>
             <details class="mobile-menu">
                 <summary aria-label="開啟宿舍官方連結選單">
@@ -966,7 +947,7 @@ function e(string $value): string
                     <?php foreach ($officialHousingLinks as $item): ?>
                         <a class="nav-link" href="<?= e($item['href']) ?>" target="_blank" rel="noopener noreferrer"><?= e($item['label']) ?></a>
                     <?php endforeach; ?>
-                    <a class="nav-link nav-link--action" href="<?= e($housingApplicationUrl) ?>" target="_blank" rel="noopener noreferrer">住宿申請入口</a>
+                    <a class="nav-link nav-link--action" href="#maintenance-guides">宿舍報修</a>
                 </nav>
             </details>
         </div>
@@ -981,7 +962,7 @@ function e(string $value): string
                     <p class="hero-intro"><?= e($residence['intro']) ?></p>
                     <div class="hero-actions">
                         <a class="button" href="#rooms">探索元智宿舍 <span class="button-arrow" aria-hidden="true">↘</span></a>
-                        <a class="text-link" href="#daily-life">宿舍生活與學習 <span aria-hidden="true">→</span></a>
+                        <a class="text-link" href="<?= e($housingApplicationUrl) ?>" target="_blank" rel="noopener noreferrer">住宿申請入口 <span aria-hidden="true">↗</span></a>
                     </div>
                     <div class="hero-note"><?= e($residence['note']) ?></div>
                 </div>
@@ -1006,17 +987,8 @@ function e(string $value): string
             </div>
         </div>
 
-        <section class="intro-section" aria-labelledby="intro-title">
-            <div class="wrap intro-grid">
-                <div class="section-kicker eyebrow">學生宿舍服務組</div>
-                <div class="intro-copy">
-                    <h2 id="intro-title">打造讓你成長、<em>自在如家的生活空間。</em></h2>
-                    <div class="intro-bottom">
-                        <p>我們致力打造多元便利的住宿環境，提供校園生活所需，讓宿舍成為你在元智珍藏的家與回憶。</p>
-                        <div class="scribble" aria-hidden="true">元智校園生活</div>
-                    </div>
-                </div>
-            </div>
+        <section class="announcement-placeholder" id="announcements" aria-label="宿舍公告預留區">
+            <!-- 公告區域預留；日後可在此加入校方提供的公告內容。 -->
         </section>
 
         <section class="rooms-section" id="rooms" aria-labelledby="rooms-title">
@@ -1129,6 +1101,28 @@ function e(string $value): string
                     <?php endforeach; ?>
                 </div>
                 <p class="resource-note">本區海報原文為繁體中文；住宿規定、申請日期與房間資訊，請以元智大學學生宿舍服務組公告為準。房間尺寸為約略值。</p>
+            </div>
+        </section>
+
+        <section class="maintenance-section" id="maintenance-guides" aria-labelledby="maintenance-title">
+            <div class="wrap">
+                <div class="section-heading">
+                    <div>
+                        <div class="eyebrow section-kicker">宿舍維護</div>
+                        <h2 id="maintenance-title">宿舍報修指南。</h2>
+                    </div>
+                    <p>依照問題類型選擇一般修繕或網路報修流程，點選圖片可開啟大圖。</p>
+                </div>
+                <div class="maintenance-guide-grid">
+                    <a class="maintenance-guide-card" href="assets/maintenance-guide-1.webp" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/maintenance-guide-1.webp" alt="宿舍一般修繕報修流程圖，說明登入個人入口、選擇問題類別與送出申請" loading="lazy" decoding="async">
+                        <span>一般修繕報修流程</span>
+                    </a>
+                    <a class="maintenance-guide-card" href="assets/maintenance-guide-2.webp" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/maintenance-guide-2.webp" alt="宿舍網路報修流程圖，說明登入個人入口、選擇學生宿舍網路問題並送出申請" loading="lazy" decoding="async">
+                        <span>網路報修流程</span>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -1461,7 +1455,7 @@ function e(string $value): string
 
             const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             if (!prefersReducedMotion && 'IntersectionObserver' in window) {
-                const revealTargets = document.querySelectorAll('.intro-grid, .section-heading, .room-card, .space-panel, .moment, .guide-step, .faq-title, .faq-list details, .closing-inner');
+                const revealTargets = document.querySelectorAll('.section-heading, .room-card, .space-panel, .moment, .guide-step, .faq-title, .faq-list details, .closing-inner');
                 const observer = new IntersectionObserver((entries, revealObserver) => {
                     entries.forEach((entry) => {
                         if (entry.isIntersecting) {
