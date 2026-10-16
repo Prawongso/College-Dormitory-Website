@@ -554,7 +554,17 @@ function e(string $value): string
 
         .section-kicker { display: flex; align-items: center; gap: 11px; color: var(--yzu-accent); }
         .section-kicker::before { width: 25px; height: 1px; background: currentColor; content: ""; }
-        .announcement-placeholder { min-height: clamp(190px, 22vw, 290px); border-block: 1px solid var(--line); background: var(--paper); }
+        .announcement-section { padding: 76px 0 84px; border-block: 1px solid var(--line); background: var(--paper); }
+        .announcement-section .section-heading { margin-bottom: 27px; }
+        .announcement-frame { overflow: hidden; border: 1px solid var(--line); background: #ffffff; }
+        .announcement-frame iframe { display: block; width: 100%; height: min(84vh, 940px); min-height: 640px; border: 0; background: #ffffff; }
+        .announcement-frame iframe[hidden] { display: none; }
+        .announcement-frame-fallback { display: grid; min-height: 320px; place-content: center; justify-items: center; gap: 12px; padding: 28px; color: var(--ink-soft); text-align: center; }
+        .announcement-frame-fallback[hidden] { display: none; }
+        .announcement-frame-fallback p { max-width: 560px; margin: 0; font-size: 13px; }
+        .announcement-official-link { display: inline-flex; align-items: center; gap: 8px; color: var(--yzu-blue); font-size: 12px; font-weight: 700; text-decoration: none; }
+        .announcement-official-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+        .announcement-note { margin: 12px 0 0; color: var(--ink-soft); font-size: 11px; }
         .maintenance-section { padding: 98px 0 108px; background: var(--paper-tint); }
         .maintenance-guide-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
         .maintenance-guide-card { display: block; overflow: hidden; border: 1px solid var(--line); background: #ffffff; text-decoration: none; }
@@ -836,7 +846,8 @@ function e(string $value): string
             .ribbon-inner::-webkit-scrollbar { display: none; }
             .ribbon-item { flex: 0 0 auto; font-size: 9px; }
             .ribbon-divider { flex: 0 0 1px; }
-            .announcement-placeholder { min-height: 180px; }
+            .announcement-section { padding: 58px 0 64px; }
+            .announcement-frame iframe { height: 78vh; min-height: 680px; }
             .maintenance-section { padding: 74px 0 82px; }
             .maintenance-guide-grid { grid-template-columns: 1fr; gap: 14px; }
             .rooms-section, .spaces-section, .housing-section, .faq-section, .student-essentials { padding: 76px 0 82px; }
@@ -961,8 +972,31 @@ function e(string $value): string
             </div>
         </div>
 
-        <section class="announcement-placeholder" id="announcements" aria-label="宿舍公告預留區">
-            <!-- 公告區域預留；日後可在此加入校方提供的公告內容。 -->
+        <section class="announcement-section" id="announcements" aria-labelledby="announcements-title">
+            <div class="wrap">
+                <div class="section-heading">
+                    <div>
+                        <div class="eyebrow section-kicker">公告資訊</div>
+                        <h2 id="announcements-title">宿舍最新公告</h2>
+                    </div>
+                    <a class="announcement-official-link" href="https://www.yzu.edu.tw/admin/st/index.php/tw/su-she-fu-wu/new" target="_blank" rel="noopener noreferrer">
+                        前往官方公告頁面 <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+                <div class="announcement-frame">
+                    <div class="announcement-frame-fallback" data-announcement-frame-fallback role="status">
+                        <p>官方公告頁限制跨網站嵌入；當本網站與公告頁位於相同網站來源時，公告才會顯示於此。現在可使用上方連結前往官方公告頁面。</p>
+                    </div>
+                    <iframe
+                        data-src="https://www.yzu.edu.tw/admin/st/index.php/tw/su-she-fu-wu/new"
+                        data-announcement-frame
+                        title="元智大學學生宿舍最新公告"
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        hidden>
+                    </iframe>
+                </div>
+            </div>
         </section>
 
         <section class="rooms-section" id="rooms" aria-labelledby="rooms-title">
@@ -1405,9 +1439,20 @@ function e(string $value): string
                 updateTimer();
             });
 
+            const announcementFrame = document.querySelector('[data-announcement-frame]');
+            const announcementFallback = document.querySelector('[data-announcement-frame-fallback]');
+            if (announcementFrame && announcementFallback) {
+                const announcementUrl = new URL(announcementFrame.dataset.src, window.location.href);
+                if (announcementUrl.origin === window.location.origin) {
+                    announcementFrame.src = announcementUrl.href;
+                    announcementFrame.hidden = false;
+                    announcementFallback.hidden = true;
+                }
+            }
+
             const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             if (!prefersReducedMotion && 'IntersectionObserver' in window) {
-                const revealTargets = document.querySelectorAll('.section-heading, .room-card, .space-panel, .moment, .guide-step, .faq-title, .faq-list details, .closing-inner');
+                const revealTargets = document.querySelectorAll('.section-heading, .room-card, .space-panel, .guide-step, .faq-title, .faq-list details, .closing-inner');
                 const observer = new IntersectionObserver((entries, revealObserver) => {
                     entries.forEach((entry) => {
                         if (entry.isIntersecting) {
