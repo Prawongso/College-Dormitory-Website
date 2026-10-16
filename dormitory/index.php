@@ -227,12 +227,6 @@ $applicationQuickLinks = [
     ],
 ];
 
-$dailyMoments = [
-    ['time' => '上午 7:00', 'title' => '校園清晨', 'copy' => '到校園餐飲區簡單用餐，再前往元智各處教室開始一天的課程。'],
-    ['time' => '下午 2:00', 'title' => '課堂與實驗之間', 'copy' => '回房間放下背包、在個人書桌整理筆記，或和室友聊聊近況。'],
-    ['time' => '晚上 11:00', 'title' => '準備休息', 'copy' => '在交誼廳放鬆一下，完成作業後準備休息；夜間網路管制也幫助大家維持良好作息。'],
-];
-
 $guideSteps = [
     ['step' => '01', 'title' => '確認住宿時程', 'copy' => '留意學生宿舍服務組公告，確認春季住宿線上抽籤時間與申請資格。'],
     ['step' => '02', 'title' => '提交住宿申請', 'copy' => '透過元智官方入口完成住宿申請，並繳交所需保證金。'],
@@ -349,7 +343,7 @@ function e(string $value): string
         }
         .skip-link:focus { transform: translateY(0); }
         .wrap { width: min(100% - var(--gutter) * 2, var(--page-width)); margin-inline: auto; }
-        .eyebrow, .micro-label, .nav-link, .button, .room-type, .space-index, .moment-time, .step-number {
+        .eyebrow, .micro-label, .nav-link, .button, .room-type, .space-index, .step-number {
             font-size: 10px;
             font-weight: 700;
             letter-spacing: .15em;
@@ -694,18 +688,6 @@ function e(string $value): string
         .space-card-link span { font-size: 15px; }
         .spaces-tail { display: flex; justify-content: flex-end; margin-top: 23px; color: rgba(255, 255, 255, .72); font-size: 13px; font-weight: 500; }
 
-        .daily-section { padding: 112px 0 105px; }
-        .daily-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(35px, 9vw, 130px); }
-        .daily-heading { position: sticky; top: 35px; align-self: start; }
-        .daily-heading h2 { max-width: 450px; margin: 14px 0 20px; font-family: var(--sans); font-size: clamp(38px, 5vw, 60px); font-weight: 700; letter-spacing: -.03em; line-height: 1.05; color: var(--yzu-blue-deep); }
-        .daily-heading p { max-width: 315px; margin: 0; color: var(--ink-soft); font-size: 13px; }
-        .moments { border-top: 1px solid var(--line); }
-        .moment { display: grid; grid-template-columns: 112px 1fr; gap: 21px; padding: 27px 0 29px; border-bottom: 1px solid var(--line); }
-        .moment-time { padding-top: 7px; color: var(--yzu-accent); font-weight: 700; }
-        .moment h3 { margin: 0 0 8px; font-family: var(--sans); font-size: clamp(20px, 2.2vw, 28px); font-weight: 700; color: var(--yzu-blue-deep); }
-        .moment p { max-width: 430px; margin: 0; color: var(--ink-soft); font-size: 13px; }
-        .daily-quote { margin: 40px 0 0; padding: 20px 0 0 23px; border-left: 3px solid var(--yzu-accent); color: var(--yzu-blue); font-family: var(--serif); font-size: 18px; font-style: italic; line-height: 1.4; background: rgba(37,99,235,0.03); }
-
         .housing-section { padding: 101px 0 111px; background: var(--rose-wash); border-top: 1px solid rgba(225,29,72,0.15); border-bottom: 1px solid rgba(225,29,72,0.15); }
         .housing-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(40px, 8vw, 115px); }
         .housing-lede { position: sticky; top: 35px; align-self: start; }
@@ -795,7 +777,7 @@ function e(string $value): string
             .spaces-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .room-card-content { padding-inline: 18px; }
             .room-card p { min-height: 96px; }
-            .daily-layout, .housing-layout { gap: 50px; }
+            .housing-layout { gap: 50px; }
             .resource-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
         @media (max-width: 680px) {
@@ -857,7 +839,7 @@ function e(string $value): string
             .announcement-placeholder { min-height: 180px; }
             .maintenance-section { padding: 74px 0 82px; }
             .maintenance-guide-grid { grid-template-columns: 1fr; gap: 14px; }
-            .rooms-section, .spaces-section, .daily-section, .housing-section, .faq-section, .student-essentials { padding: 76px 0 82px; }
+            .rooms-section, .spaces-section, .housing-section, .faq-section, .student-essentials { padding: 76px 0 82px; }
             .section-heading { align-items: start; flex-direction: column; gap: 17px; margin-bottom: 29px; }
             .section-heading h2 { font-size: clamp(32px, 9vw, 48px); }
             .section-heading p { max-width: 410px; }
@@ -886,14 +868,6 @@ function e(string $value): string
             .spaces-grid .space-panel:first-child { min-height: 350px; }
             .resource-grid { grid-template-columns: 1fr; gap: 14px; }
             .spaces-tail { font-size: 13px; }
-            .daily-layout { grid-template-columns: 1fr; gap: 35px; }
-            .daily-heading { position: static; }
-            .daily-heading h2 { font-size: clamp(34px, 9vw, 50px); }
-            .moment { grid-template-columns: 83px 1fr; gap: 10px; padding: 22px 0 24px; }
-            .moment-time { font-size: 9px; }
-            .moment h3 { font-size: 22px; }
-            .moment p { font-size: 12px; }
-            .daily-quote { margin-top: 27px; font-size: 16px; }
             .housing-layout { grid-template-columns: 1fr; gap: 38px; }
             .housing-lede { position: static; }
             .housing-lede h2 { font-size: clamp(34px, 9vw, 50px); }
@@ -1168,28 +1142,6 @@ function e(string $value): string
                     <?php endforeach; ?>
                 </div>
                 <div class="spaces-tail">便利的生活空間，陪伴你在校園中成長。</div>
-            </div>
-        </section>
-
-        <section class="daily-section" id="daily-life" aria-labelledby="daily-title">
-            <div class="wrap daily-layout">
-                <div class="daily-heading">
-                    <div class="eyebrow section-kicker">宿舍日常</div>
-                    <h2 id="daily-title">元智宿舍的一天。</h2>
-                    <p>在專注學習、便利生活與夜晚放鬆之間，找到自在平衡的日常。</p>
-                    <blockquote class="daily-quote">「這裡是承載青春回憶的家，未來想起時，依然令人珍惜。」</blockquote>
-                </div>
-                <div class="moments">
-                    <?php foreach ($dailyMoments as $moment): ?>
-                        <article class="moment">
-                            <div class="moment-time"><?= e($moment['time']) ?></div>
-                            <div>
-                                <h3><?= e($moment['title']) ?></h3>
-                                <p><?= e($moment['copy']) ?></p>
-                            </div>
-                        </article>
-                    <?php endforeach; ?>
-                </div>
             </div>
         </section>
 
