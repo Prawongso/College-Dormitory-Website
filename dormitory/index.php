@@ -671,9 +671,12 @@ function e(string $value): string
         .space-panel--lilac { background: #ede9fe; }
         .space-panel--teal { background: #ccfbf1; }
         .space-media { position: relative; width: calc(100% + 44px); height: 178px; flex: 0 0 178px; margin: -22px -22px 0; overflow: hidden; background: #dbe3e9; }
-        .space-slide { position: absolute; inset: 0; margin: 0; opacity: 0; transition: opacity .65s ease; }
-        .space-slide.is-active { opacity: 1; }
-        .space-photo { display: block; width: 100%; height: 100%; object-fit: cover; }
+        .space-slide { position: absolute; inset: 0; margin: 0; opacity: 0; pointer-events: none; transition: opacity .65s ease; }
+        .space-slide.is-active { opacity: 1; pointer-events: auto; }
+        .space-slide > a { display: block; width: 100%; height: 100%; cursor: zoom-in; }
+        .space-image-link:focus-visible { outline: 3px solid #ffffff; outline-offset: -5px; }
+        .space-image-link:hover .space-photo { transform: scale(1.035); }
+        .space-photo { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .32s ease; }
         .space-slideshow-controls { position: absolute; right: 9px; bottom: 9px; z-index: 1; display: flex; align-items: center; gap: 5px; padding: 5px; background: rgba(8, 35, 56, .78); color: #fff; }
         .space-slideshow-controls[hidden] { display: none; }
         .space-slideshow-controls button { display: grid; width: 30px; height: 30px; place-items: center; padding: 0; border: 1px solid rgba(255, 255, 255, .56); background: transparent; color: #fff; font: inherit; font-size: 18px; line-height: 1; cursor: pointer; }
@@ -744,7 +747,7 @@ function e(string $value): string
         .faq-answer { max-width: 560px; padding: 0 35px 19px 0; color: var(--ink-soft); font-size: 12px; }
         .faq-answer p { margin: 0; }
 
-        .student-essentials { padding: 103px 0 111px; background: var(--paper-tint); }
+        .student-essentials { padding: 103px 0 111px; background: var(--paper-tint); scroll-margin-top: 82px; }
         .resource-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: stretch; gap: 16px; }
         .resource-card { min-width: 0; overflow: hidden; background: var(--paper); border: 1px solid var(--line); }
         .resource-image { position: relative; display: block; padding: 12px; background: #ffffff; border-bottom: 1px solid var(--line); }
@@ -776,8 +779,10 @@ function e(string $value): string
         .footer-contact p { margin: 0; line-height: 1.75; overflow-wrap: anywhere; }
         .footer-contact .footer-contact-hotline { color: #ffffff; font-size: 13px; font-weight: 700; }
         .footer-contact a { color: inherit; text-decoration-color: rgba(255, 255, 255, .5); text-underline-offset: 3px; }
-        .footer-top { grid-column: 2; align-self: end; margin-bottom: 3px; color: var(--paper); font-size: 10px; letter-spacing: .13em; text-decoration: none; text-transform: uppercase; font-weight: 700; white-space: nowrap; }
+        .footer-meta { grid-column: 2; display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between; gap: 16px; text-align: right; }
+        .footer-top { align-self: end; margin-bottom: 3px; color: var(--paper); font-size: 10px; letter-spacing: .13em; text-decoration: none; text-transform: uppercase; font-weight: 700; white-space: nowrap; }
         .footer-top:hover { color: #93c5fd; }
+        .footer-copyright { margin: 0; color: rgba(255, 255, 255, .38); font-size: 8px; letter-spacing: .02em; line-height: 1.4; }
 
         @media (max-width: 1120px) {
             .desktop-nav { display: none; }
@@ -899,7 +904,8 @@ function e(string $value): string
             .footer-brand { align-items: center; }
             .footer-brand strong { font-size: 11px; }
             .footer-contact { font-size: 10px; }
-            .footer-top { align-self: flex-start; }
+            .footer-meta { align-self: flex-end; margin-left: auto; gap: 9px; }
+            .footer-top { align-self: flex-end; }
         }
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
@@ -952,6 +958,7 @@ function e(string $value): string
                     <div class="hero-actions">
                         <a class="button" href="#rooms">探索元智宿舍 <span class="button-arrow" aria-hidden="true">↘</span></a>
                         <a class="text-link" href="<?= e($housingApplicationUrl) ?>" target="_blank" rel="noopener noreferrer">住宿申請入口 <span aria-hidden="true">↗</span></a>
+                        <a class="text-link" href="#student-essentials">入住前，先做好準備 <span aria-hidden="true">↘</span></a>
                     </div>
                     <div class="hero-note"><?= e($residence['note']) ?></div>
                 </div>
@@ -1145,7 +1152,7 @@ function e(string $value): string
                         <div class="eyebrow section-kicker">生活與學習設施</div>
                         <h2 id="spaces-title">校園所需，<br>就在身邊。</h2>
                     </div>
-                    <p>探索校園周邊的餐飲、自習、運動、健康照護與學生服務空間。</p>
+                    <p>探索校園周邊的餐飲、自習、運動、健康照護與學生服務空間。點選照片可開啟原圖。</p>
                 </div>
                 <div class="spaces-grid">
                     <?php foreach ($spaces as $space): ?>
@@ -1153,7 +1160,9 @@ function e(string $value): string
                             <div class="space-media"<?= count($space['slides']) > 1 ? ' data-space-slideshow role="group" aria-roledescription="照片輪播" aria-label="' . e($space['name']) . '照片"' : '' ?>>
                                 <?php foreach ($space['slides'] as $slideIndex => $slide): ?>
                                     <figure class="space-slide<?= $slideIndex === 0 ? ' is-active' : '' ?>" aria-hidden="<?= $slideIndex === 0 ? 'false' : 'true' ?>">
-                                        <img class="space-photo" src="<?= e($slide['image']) ?>" alt="<?= e($slide['alt']) ?>" loading="lazy" decoding="async">
+                                        <a class="space-image-link" href="<?= e($slide['image']) ?>" target="_blank" rel="noopener noreferrer" aria-label="在新分頁檢視照片：<?= e($slide['alt']) ?>" tabindex="<?= $slideIndex === 0 ? '0' : '-1' ?>">
+                                            <img class="space-photo" src="<?= e($slide['image']) ?>" alt="<?= e($slide['alt']) ?>" loading="lazy" decoding="async">
+                                        </a>
                                     </figure>
                                 <?php endforeach; ?>
                                 <?php if (count($space['slides']) > 1): ?>
@@ -1263,7 +1272,10 @@ function e(string $value): string
                 <p>諮詢：2880、2868 │ 維修：2865 │ 床位分配：2867 │ 學生餐廳：2869 │</p>
                 <p>男生宿舍櫃檯：2881 │ 女生宿舍櫃檯：2882 │ 宿舍辦公室（24小時）：<a href="tel:0903032011">0903032011</a></p>
             </section>
-            <a class="footer-top" href="#top">回到頁首 ↑</a>
+            <div class="footer-meta">
+                <a class="footer-top" href="#top">回到頁首 ↑</a>
+                <p class="footer-copyright">Copyright © 2026 黃庚辰. All rights reserved.</p>
+            </div>
         </div>
     </footer>
     <script>
@@ -1383,6 +1395,8 @@ function e(string $value): string
                         const active = index === currentSlide;
                         slide.classList.toggle('is-active', active);
                         slide.setAttribute('aria-hidden', String(!active));
+                        const imageLink = slide.querySelector('.space-image-link');
+                        if (imageLink) imageLink.tabIndex = active ? 0 : -1;
                     });
                     counter.textContent = `${currentSlide + 1} / ${slides.length}`;
                 };
